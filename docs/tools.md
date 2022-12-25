@@ -67,6 +67,17 @@ git push -f origin <branch name>
 git fetch
 ```
 
+- for pushing into new repositories
+
+```
+git add .
+git commit -am "UPD"
+git branch {branch name} ##create new branch
+git remote add origin {gitcloneurl}  ##add git remote url  
+##add git credentials
+git push origin {branch name}
+
+```
 - merge branch
 
 ```

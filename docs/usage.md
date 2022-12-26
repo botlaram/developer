@@ -123,6 +123,12 @@ var = class_type({return_value} {for loop})
 ```
 var = class_type({return_value} {for loop} {condition})
 ```
+### read and write
+
+- syntax
+```
+f = open({file_path},{file_mode})
+```
 
 ### dataclass
  

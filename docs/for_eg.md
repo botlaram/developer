@@ -130,6 +130,13 @@ def middle():
 middle
 ```
 
+### read write file
+
+```
+f = open("./read_write_demo.txt","r")  ##r=read
+print(f.read())   ##read() to print the txt 
+f.close() ##close
+```
  
 
 ### Class

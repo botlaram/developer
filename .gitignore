@@ -9,4 +9,4 @@ env/
 /py_files/create_female_demo*
 
 ##log files
-.log*
+*.log

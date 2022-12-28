@@ -150,14 +150,43 @@ class Book:
 book=Book("title","author",price)
 print(book.price)           ###print values
 ```
+### logging
+
+- Logging is a means of tracking events that happen when some software runs. The software’s developer adds logging calls to their code to indicate that certain events have occurred.Due to this logging method, the record of events can be saved unlike print which only displays the content in console.
+
+different level of logging, also logging methods should be in following order:
+
+1. Basic logging method
+```
+logging.debug('debug')
+logging.info("info")
+logging.warning('warn')
+logging.error('error')
+logging.critical('critical')
+```
+
+2. Logging with configuration
+```
+import logging
+logging.basicConfig(level=logging.INFO, filename="{filename.log}",filemode="w",
+                    format="%(asctime)s - %(levelname)s - %(funcName)s - %(lineno)s - %(message)s")  ##funcname display the actual fnction name
+```
 
 ### regex
 - The re module offers a set of functions that allows us to search a string for a match:
 
 most used modules in regex are :
+
 Function	Description
-1. findall	Returns a list containing all matches ##returns all matched searched elements
-2. search	Returns a Match object if there is a match anywhere in the string
-3. split	Returns a list where the string has been split at each match
-4. sub	Replaces one or many matches with a string
-5. finditer 
+
+1. findall > Returns a list containing all matches ##returns all matched searched elements
+
+2. search > Returns a Match object if there is a match anywhere in the string
+
+3. split > Returns a list where the string has been split at each match
+
+4. sub > Replaces one or many matches with a string
+
+5. finditer > 
+
+

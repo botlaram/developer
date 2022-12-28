@@ -7,3 +7,6 @@ env/
 ##ignore files
 ./py_files/create_male_demo*
 /py_files/create_female_demo*
+
+##log files
+.log*

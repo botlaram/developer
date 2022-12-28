@@ -1,7 +1,7 @@
 import logging
 
-logging.basicConfig(level=logging.INFO, filename="logFile.log",filemode="w",
-                    format="%(asctime)s - %(levelname)s - %(message)s")
+logging.basicConfig(level=logging.INFO, filename="basic_loggin.log",filemode="w",
+                    format="%(asctime)s - %(levelname)s - %(funcName)s - %(lineno)s - %(message)s")  ##funcname display the actual fnction name
 
 x = 2
 
@@ -16,11 +16,13 @@ print("\n << eg 2 logging.error >> \n")
 #================================================================
 ##using error as exception
 
-try:
-    1/0
-except Exception as e:
-    logging.error(e,exc_info=True)
-    
+def logs():
+    try:
+        1/0
+    except Exception as e:
+        logging.error(e,exc_info=True)
+logs()
+  
 print("\n << eg 3 logging.error >> \n")
 #================================================================
 ##usin exception as exception by replacing error

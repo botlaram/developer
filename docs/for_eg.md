@@ -138,6 +138,27 @@ print(f.read())   ##read() to print the txt
 f.close() ##close
 ```
  
+### logging
+
+- for creating a log file for each different py file for those whose function are imported
+from different py file
+
+```
+import logging
+
+##using getlogger to create seperate log files
+logger=logging.getLogger(__name__)
+logger.setLevel(logging.INFO) ##set logging level
+
+## formatter is to set logs format
+log_format=logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
+
+## fileHandler is user to create a file
+log_file=logging.FileHandler("example.log")
+
+log_file.setFormatter(log_format)
+logger.addHandler(log_file)
+```
 
 ### Class
 

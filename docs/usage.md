@@ -150,3 +150,14 @@ class Book:
 book=Book("title","author",price)
 print(book.price)           ###print values
 ```
+
+### regex
+- The re module offers a set of functions that allows us to search a string for a match:
+
+most used modules in regex are :
+Function	Description
+1. findall	Returns a list containing all matches ##returns all matched searched elements
+2. search	Returns a Match object if there is a match anywhere in the string
+3. split	Returns a list where the string has been split at each match
+4. sub	Replaces one or many matches with a string
+5. finditer 

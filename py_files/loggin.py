@@ -14,13 +14,16 @@ logging.critical('critical')
 
 print("\n << eg 2 logging.error >> \n")
 #================================================================
-# try:
-#     1/0
-# except Exception as e:
-#     logging.error(e,exc_info=True)
+##using error as exception
+
+try:
+    1/0
+except Exception as e:
+    logging.error(e,exc_info=True)
     
 print("\n << eg 3 logging.error >> \n")
 #================================================================
+##usin exception as exception by replacing error
 
 try:
     1/0

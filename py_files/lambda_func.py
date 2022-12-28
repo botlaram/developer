@@ -8,7 +8,7 @@ add(2,5)
 add = lambda x,y:x+y
 print(add(2,5))
 
-#passing argument in lambda
+#passing argument without lambda
 nums=[2,4,6,8,10]
 def mul(x):
     for i in x:

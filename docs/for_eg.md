@@ -158,6 +158,10 @@ log_file=logging.FileHandler("example.log")
 
 log_file.setFormatter(log_format)
 logger.addHandler(log_file)
+
+## furthe code
+def something():
+    logger.info("this is a something function")
 ```
 
 ### Class
@@ -254,9 +258,12 @@ book=Book("Peaceofmind","Unknown",50.50)
 print(book.price)
 ```
 
-#### classmethod
+#### method-static
 
 ```
+##class method :A class method is a method which is bound to the class and not the object of the class.
+##static method : A static method is used when we want to create a function without using self as instance-(just to create a independent fucntin)
+
 from datetime import date
 
 class Person:
@@ -270,11 +277,29 @@ class Person:
 	def fromBirthYear(cls, name, year):
 		return cls(name, date.today().year - year)
 
+	# a static method to check if a
+	# Person is adult or not.
+	@staticmethod
+	def isAdult(age):
+		return age > 18
+
+    ##static method eg 2
+    ##this function is independent of the class ,created without using self as instance
+	@staticmethod
+	def thankyou(msg):
+		return msg
+
 person1 = Person('ram', 21)
 person2 = Person.fromBirthYear('ram', 1997)
 
 print(person1.age)
 print(person2.age)
+
+# print the result
+print(Person.isAdult(22))
+
+# print thankyuu msg
+print(Person.thankyou("thanks for looking up this file"))
 
 ```
 

@@ -6,7 +6,7 @@ hide:
  
 ##Builtin
  
-### args and kwargs
+### Args and Kwargs
 
 ```
 ##args
@@ -113,7 +113,7 @@ filtering = list(x for x in nums_List if x%2==0)
 print(filtering)
 ```
  
-### decorator
+### Decorator
 ```
 def first(func):    ##passing the func as an argument
     def second():
@@ -130,7 +130,7 @@ def middle():
 middle
 ```
 
-### read write file
+### Read Write File
 
 ```
 f = open("./read_write_demo.txt","r")  ##r=read
@@ -138,7 +138,7 @@ print(f.read())   ##read() to print the txt
 f.close() ##close
 ```
  
-### logging
+### Logging
 
 - for creating a log file for each different py file for those whose function are imported
 from different py file
@@ -159,7 +159,7 @@ log_file=logging.FileHandler("example.log")
 log_file.setFormatter(log_format)
 logger.addHandler(log_file)
 
-## furthe code
+## further code
 def something():
     logger.info("this is a something function")
 ```
@@ -211,7 +211,7 @@ b2.get_details()
 
 ```
 
-#### isinstance
+#### Isinstance
 
 ```
 
@@ -228,7 +228,7 @@ obj = Myclass()
 x = isinstance(obj, Myclass)
 ```
 
-#### dataclass
+#### Dataclass
 
 ```
 #without dataclass
@@ -258,7 +258,7 @@ book=Book("Peaceofmind","Unknown",50.50)
 print(book.price)
 ```
 
-#### method-static
+#### Method-Static
 
 ```
 ##class method :A class method is a method which is bound to the class and not the object of the class.
@@ -303,7 +303,7 @@ print(Person.thankyou("thanks for looking up this file"))
 
 ```
 
-#### inheritance
+#### Inheritance
 
 ```
 class Publisher:

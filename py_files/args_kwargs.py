@@ -1,5 +1,7 @@
 ##args
 def sum(*args):
+    """_summary_
+    """
     total=0
     for i in args:
         total=total+i
@@ -12,6 +14,8 @@ print("\n << eg 2 >> \n")
 #eg2
 
 def add_list(*args):
+    """doc
+    """
     list=[]
     for name in args:
         list.append(name)

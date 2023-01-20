@@ -12,6 +12,20 @@ Usage doc is to state syntax for builtin funct. and modules
 
 ##Builtin or Modules
 
+### use of __init__.py file
+
+__init__.py is used t import packages from a particular directory
+
+![Init file](./png/initfile.png)
+
+```
+Module: A single python script.
+
+Package: A collection of modules. (for eg: directory in which all py files contains)
+```
+
+click [here](https://towardsdatascience.com/understanding-python-imports-init-py-and-pythonpath-once-and-for-all-4c5249ab6355) for the documentation for usage of init file.
+
 ### args and kwargs
 
 - In Python, we can pass a variable number of arguments to a function using special symbols. There are two special symbols:

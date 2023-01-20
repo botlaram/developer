@@ -1,6 +1,8 @@
 ##decorator is used to add functionality to an existing code.
 
 def my_function():
+    """_summary_
+    """
     print('I am a function.')
 
 # Assign the function to a variable without parenthesis. We don't want to execute the function.

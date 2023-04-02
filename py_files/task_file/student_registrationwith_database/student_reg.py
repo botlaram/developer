@@ -439,25 +439,4 @@ Button(root,text="Reset",width=19,height=2,font="arial 12 bold",bg="lightblue",c
 Button(root,text="Exit",width=19,height=2,font="arial 12 bold",bg="lightblue",command=Exit).place(x=1000,y=610)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 root.mainloop()

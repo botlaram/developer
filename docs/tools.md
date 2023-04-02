@@ -82,18 +82,17 @@ git push origin {branch name}
 
 ```
 vscode > 
-git clone 
+git clone url
 git checkout main branch
 git pull
 git checkout feature branch
-git merge main branch ## if you want to update feature branch with main
+git merge main_branch ## if you want to update feature branch with main
 ## you will get merge conflicts in vscode
 ## resolve merge conflicts
 
-git commit
+git commit ##check branch name and commit to your feature branch
 git push feature branch
- 
-git merge {branch name}  "enter the branch which you have to merge into your branch"
+
 ```
 
 - rebase 

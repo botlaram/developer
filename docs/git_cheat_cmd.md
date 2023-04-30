@@ -65,17 +65,17 @@ Git add
 
 Add a file to staging (Index) area
 
-    $ git add Filename
+    $ git add <Filename> <Filename>
 
 Add all files of a repo to staging (Index) area
 
-    $ git add*
+    $ git add .
 
 Git commit
 
 Record or snapshots the file permanently in the version history with a message
 
-    $ git commit-m " Commit Message"
+    $ git commit -m " Commit Message"
 
 ## 5. Track changes
 
@@ -158,7 +158,7 @@ List Branch:
     
 Delete Branch:
     
-    $ git branch -d<branch name>
+    $ git branch -d <branch_name>
     
 Delete a remote Branch:
     
@@ -166,7 +166,7 @@ Delete a remote Branch:
     
 Rename Branch:
     
-    $ git branch -m <old branch name><new branch name>
+    $ git branch -m <old branch name> <new branch name>
     
 ## 10.Git checkout
 
@@ -184,7 +184,7 @@ Checkout a Remote branch:
     
     $ git checkout <remotebranch>
 
-## 11.Git stash
+## 11. Git stash
 
 Switch branches without committing the current branch.
     
@@ -193,7 +193,6 @@ Stash current work:
     $ git stash
 
 Saving stashes with a message:
-    
     
     $ git stash save "<Stashing Message"
     
@@ -239,7 +238,7 @@ Merge the branches:
 
 Merge the specified commit to currently active branch:
 
-    $git merge <commit>
+    $ git merge <commit>
 
 ## 13.Git rebase
     
@@ -303,8 +302,6 @@ Pull data from remote server:
 
 ## 16. Pushing Updates
 
-Git push
-
 Transfer the commits from your local
 
 Push data to remote server:
@@ -313,7 +310,7 @@ Push data to remote server:
 
 Force push data:
 
-    $ git push <remote><branch>-f
+    $ git push <remote> <branch> -f
 
 pository to a remote server.
 
@@ -350,7 +347,7 @@ Synchronize the local repository:
 
     $ git fetch origin
 
-## 19. Undo changes • Git revert
+## 19. Undo changes > Git revert
 
 Undo the changes
 
@@ -369,5 +366,3 @@ Reset the changes:
     $ git reset -soft
 
     $ git reset --mixed
-
-

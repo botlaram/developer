@@ -5,6 +5,7 @@ nav:
     - Usage: usage.md
     - For eg: for_eg.md
     - Tools: tools.md
+    - Git cheat: git_cheat_cmd.md
     - Source Code: sourcecode.md
 theme:
   name: material

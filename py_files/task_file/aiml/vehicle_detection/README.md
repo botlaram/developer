@@ -13,7 +13,9 @@ pip install -r requirements.txt
 
 ## installed modules
 pip install opencv-python
+
 pip install opencv-contrib-python
+
 pip install numpy
 
 ## run the script from 

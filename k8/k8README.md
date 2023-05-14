@@ -241,4 +241,4 @@ find the external ip address to verify the request
 
 Note : it will display along with interna and external ip address 
 
-click on external ip address to visit webpage
+click on external ip address to visit webpage.

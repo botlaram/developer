@@ -46,9 +46,12 @@ kubectl proxy
 # op commands
 > oc project <projectname> #ocp110016
 
-# helm
+# helm commands
 trigger in dashboard folder of helm
 > helm install azp-demo .
+
+debug
+> helm template --dry-run --debug <release-name> .
 
 # check cronjob logs
 1. To list all the CronJobs in the current namespace:
@@ -65,4 +68,15 @@ trigger in dashboard folder of helm
 
 5. To view the status of a specific job:
 > kubectl describe job <job-name>
+
+
+
+# persistent volume claims
+
+persistent volumes are used if you want some data to persist when a pod is terminated or re-scheduled
+
+# selectors in kubernetes
+
+The selector field in the Deployment YAML is used to select which pods the deployment should manage, whereas the selector field in the CronJob YAML is used to select which pods the CronJob should create and manage. If you don't specify a selector in the CronJob YAML, Kubernetes will use a default one that selects all pods with the same name as the CronJob.
+
 

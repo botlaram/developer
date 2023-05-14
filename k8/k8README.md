@@ -79,6 +79,10 @@ Containers, service meshes, microservices, immutable infrastructure and declarat
 
 Minikube is a lightweight Kubernetes implementation that creates a VM on your local machine and deploys a simple cluster containing only one node. Minikube is available for Linux, macOS, and Windows systems.
 
+# Cluster
+
+A Kubernetes cluster is a set of nodes that run containerized applications. Containerizing applications packages an app with its dependences and some necessary services. 
+
 # Nodes
 
 A Node is a worker machine in Kubernetes and may be either a virtual or a physical machine, depending on the cluster. Each Node is managed by the control plane. A Node can have multiple pods, and the Kubernetes control plane automatically handles scheduling the pods across the Nodes in the cluster.
@@ -87,6 +91,12 @@ A Node is a worker machine in Kubernetes and may be either a virtual or a physic
 
 Namespaces are a way to organize clusters into virtual sub-clusters — they can be helpful when different teams or projects share a Kubernetes cluster. Any number of namespaces are supported within a cluster, each logically separated from others but with the ability to communicate with each other.
 A Kubernetes namespace provides the scope for Pods, Services, and Deployments in the cluster. Users interacting with one namespace do not see the content in another namespace
+
+# Services
+
+A Kubernetes Service is an abstraction layer that defines a logical set of Pods (a group of one or more containers) and a policy for accessing them. In other words, a Kubernetes Service is a way to expose an application running on a set of Pods as a network service.
+
+Kubernetes Services allow you to decouple your application from the network by providing a stable IP address and DNS name that can be used to access the application. This allows you to deploy your application in a distributed, scalable way, without having to worry about the underlying network infrastructure.
 
 # to start with
 
@@ -215,3 +225,20 @@ View application logs
 
 > kubectl logs "pod-name" -n "namespace"
 
+create a service using service.yaml
+
+Minikube Tunnel start
+
+> minikube tunnel
+
+install service yaml
+
+> kubectl apply -f service.yaml
+
+find the external ip address to verify the request
+
+> kubectl get services -n "namespace"
+
+Note : it will display along with interna and external ip address 
+
+click on external ip address to visit webpage

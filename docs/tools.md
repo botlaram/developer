@@ -182,6 +182,15 @@ docker rm <container_id>
 docker kill <container_id>
 ```
 
+- Stop all the containers
+
+```docker stop $(docker ps -a -q)```
+
+- Remove all the containers
+
+```docker rm $(docker ps -a -q)```
+
+
 - check containers with runnning
 
 ```

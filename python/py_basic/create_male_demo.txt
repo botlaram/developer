@@ -1,0 +1,11 @@
+b 54 M 
+c 23 M
+e 75 M
+g 78 M
+i 45 M
+j 56 M
+n 65 M
+r 86 M
+s 75 M
+u 32 M
+z 22 M

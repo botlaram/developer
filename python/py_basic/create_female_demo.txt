@@ -1,0 +1,15 @@
+a 26 F
+d 45 F
+f 82 F
+h 98 F
+k 22 F
+l 15 F
+m 78 F
+o 32 F
+p 62 F
+q 45 F
+t 96 F
+v 30 F
+w 49 F
+x 78 F
+y 44 F

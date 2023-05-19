@@ -26,14 +26,14 @@ mycursor=mydb.cursor()
 #     print(tb)
 
 
-# insert rows/data
+## insert rows/data
 
 # sqlFormula = "INSERT INTO students (name,age) VALUES (%s,%s)" #%s is place holders
 # student1=("Ram",26)   # inputs
 # mycursor.execute(sqlFormula,student1)  # insert in table
 # mydb.commit()  # confirm the command
 
-# insert multiple of data
+## insert multiple of data
 
 # sqlFormula = "INSERT INTO students (name,age) VALUES (%s,%s)" #%s is place holders
 # student=[("Ram",26),
@@ -44,7 +44,7 @@ mycursor=mydb.cursor()
 # mydb.commit()  # confirm the command
 
 
-# get/select data
+## Get/select data
 
 # mycursor.execute("SELECT * FROM students")   # selecting all data from table
 # display_rows=mycursor.fetchall()   # fetches all the rows from table
@@ -52,7 +52,7 @@ mycursor=mydb.cursor()
 #     print(rows)
     
     
-# fetch specific column
+## Fetch specific column
 
 # mycursor.execute("SELECT age FROM students")   # selecting age data from table
 # display_age=mycursor.fetchall()   # fetches age column from table   #fetchone is use to fetch only one data
@@ -60,4 +60,56 @@ mycursor=mydb.cursor()
 #     print(age)
     
 
+## Fetch the data from value using where cmd
 
+# sql= "SELECT * FROM students WHERE age=26"
+# mycursor.execute(sql)
+
+# display_values=mycursor.fetchall()
+
+# for value in display_values:
+    # print(value)
+
+## Fetch data which looks like
+
+# mycursor.execute("SELECT  * FROM students WHERE name LIKE 'Ra%'")
+# # mycursor.execute("SELECT  * FROM students WHERE name LIKE '%we%'")  ## it will return the name with contain we
+# display_values = mycursor.fetchall()
+
+# for names in display_values:
+#     print(names)
+
+## Fetch data in desc order
+
+# mycursor.execute("SELECT * FROM students ORDER BY name DESC")
+# display_names=mycursor.fetchall()
+
+# for names in display_names:
+#     print(names)
+
+## Fetch data in order
+
+# mycursor.execute("SELECT * FROM students ORDER BY name") 
+# display_order=mycursor.fetchall()
+# for order_by in display_order:
+#     print(order_by)
+    
+       
+## update data 
+# mycursor.execute("UPDATE students SET age=22 WHERE name='Swetha'")
+
+## display limit values
+
+# mycursor.execute("SELECT * FROM students LIMIT 4")
+# display_names=mycursor.fetchall()
+# for names in display_names:
+#     print(names)
+
+
+## delete data 
+
+# mycursor.execute("DELETE FROM students WHERE name='Ram'")
+
+## delete table 
+
+mycursor.execute("DROP TABLE students")

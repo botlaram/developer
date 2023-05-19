@@ -62,12 +62,32 @@ Treated the same way in like the rest of the application
 
 Are allowed to run against a released version
 
+# Learning Kubernetes by Kim Schlesinger
+# K8 docs
+
+https://kubernetes.io/docs/home/
+
+# KEDA
+
+https://keda.sh/docs/2.1/concepts/
+
+# Auto Scaling Azure Pipeline Using Keda
+
+https://keda.sh/blog/2021-05-27-azure-pipelines-scaler/#:~:text=You%20can%2C%20however%2C%20use%20a%20workaround%20to%20register,the%20placeholder%20agent%20registered%20in%20the%20agent%20pool.
+
 # K8 architecture 
 
 ![Architecture](./k8_architecture.jpg)
 
+
 ![IBM K8 Architecture](./k8explainibm.png)
 
+
+![K8 Work flow Architecture](./k8_workflow_architect.PNG)
+
+# k8 cheat scr templates
+
+https://github.com/bfreuden/kubernetes-cheat-sheet/tree/master/src
 
 # Cloud Native ...?
 
@@ -83,6 +103,48 @@ Minikube is a lightweight Kubernetes implementation that creates a VM on your lo
 
 A Kubernetes cluster is a set of nodes that run containerized applications. Containerizing applications packages an app with its dependences and some necessary services. 
 
+# Control Plane
+
+the control plane refers to the set of components responsible for managing and controlling the cluster's overall operation. It acts as the brain of the Kubernetes cluster, making decisions and maintaining the desired state of the system.
+
+The control plane components work together to provide key functionalities such as scheduling, scaling, maintaining cluster state, handling API requests, and ensuring the overall health and availability of the cluster. These components include:
+
+# API Server
+
+ The Kubernetes API server is the front-end component that exposes the Kubernetes API, which allows users and other components to interact with the cluster. It handles API requests, authentication, and authorization, and serves as the primary entry point for managing the cluster.
+
+# Scheduler
+
+ The scheduler is responsible for placing pods onto suitable nodes in the cluster. It considers factors like resource requirements, node conditions, and affinity/anti-affinity rules when making scheduling decisions. The scheduler ensures optimal resource allocation and even distribution of workloads across the cluster.
+
+# Controller Manager:
+
+ The controller manager runs various controllers that continuously monitor the cluster's state and take actions to maintain the desired state. Some of the built-in controllers include the ReplicaSet controller, Deployment controller, Service controller, and Node controller. Each controller is responsible for managing specific resources or aspects of the cluster.
+
+# etcd
+
+etcd is a distributed key-value store that serves as the cluster's persistent data store. It stores the configuration and state information of the cluster, including cluster-wide settings, object definitions, and runtime data. The control plane components read from and write to etcd to maintain a consistent and up-to-date view of the cluster.
+
+
+# Worker nodes 
+
+has three components
+
+# kubelet
+
+Kubelet is an agent that runs on every worker node. It makes sure that containers in a pod are running and healthy. It communicate directly with API-server in the contrl plane.
+
+its Kubectl task to pull the image for the container
+ 
+# Container Runtime
+
+A kubelet assigned to new pod starts a container using Container Runtime Interface (CRI). This CRI encables the Kubelet to create containers with the engines
+
+Engines >  Containerd, CRI-o, Kata Containers, AWS firecracker
+
+# KubeProxy
+
+Makes sure that pods and services can communicate with other nodes 
 # Nodes
 
 A Node is a worker machine in Kubernetes and may be either a virtual or a physical machine, depending on the cluster. Each Node is managed by the control plane. A Node can have multiple pods, and the Kubernetes control plane automatically handles scheduling the pods across the Nodes in the cluster.
@@ -97,6 +159,28 @@ A Kubernetes namespace provides the scope for Pods, Services, and Deployments in
 A Kubernetes Service is an abstraction layer that defines a logical set of Pods (a group of one or more containers) and a policy for accessing them. In other words, a Kubernetes Service is a way to expose an application running on a set of Pods as a network service.
 
 Kubernetes Services allow you to decouple your application from the network by providing a stable IP address and DNS name that can be used to access the application. This allows you to deploy your application in a distributed, scalable way, without having to worry about the underlying network infrastructure.
+
+# LoadBalancer in Service
+
+A LoadBalancer is a type of service that provides external access to the services running inside a cluster. It automatically provisions a load balancer in the cloud provider's infrastructure and maps a unique external IP address to the service, enabling traffic to be distributed across multiple pods.
+
+# Data Storage
+
+There are two ways to store and connect with DataBase by using
+
+1. Connecting database outside the Cluster for eg: Sql DataBase, Azure Sql, Amazon RDS or Google Cloud SQL and configure with cluster
+
+2. K8 Persistent Volume
+
+It is a type of Data Storage the exists within the Cluster , even after the Pods get destroyed.
+
+# ConfigMap 
+
+a configmap is the kubernetes object the store the sensitive data i.e port numbers, env values.
+
+# Secrets
+
+k8 secrets is use to store password and ssh keys
 
 # to start with
 
@@ -115,6 +199,19 @@ to create a minikube cluster
 explore and check the cluster
 
 > kubectl cluster-info
+
+k8s objects and  display apiVersions and kind
+
+> kubectl api-resources
+
+every resources runs in pods
+
+> kubectl get pods -n kube-system    # for minikube cluster
+
+Etcd logs
+
+> kubectl logs etcd-minikube -n kube-system | jq .     # for minikube
+
 
 to get detail about the cluster
 
@@ -149,6 +246,8 @@ create a new namespace using namespace.yaml file
 delete a namespace
 
 > kubectl delete -f namespace.yaml
+
+> kubectl delete ns "namespace"
 
 create a deployment using deployment.yaml file
 
@@ -233,6 +332,8 @@ Minikube Tunnel start
 
 install service yaml
 
+Kubernetes service assist to configure to External IP address 
+
 > kubectl apply -f service.yaml
 
 find the external ip address to verify the request
@@ -242,3 +343,19 @@ find the external ip address to verify the request
 Note : it will display along with interna and external ip address 
 
 click on external ip address to visit webpage.
+
+add resources to pods in deployment.yaml
+
+delete k8 resources using yaml file names
+
+Note: delete the files in following order , and delete namespace.yaml file last
+
+> kubectl delete -f deployment.yaml
+
+> kubectl delete -f service.yaml
+
+> kubectl delete -f namespace.yaml
+
+delete minikube cluster
+
+> minikube delete

@@ -1,0 +1,13 @@
+---
+# to start yaml with ---
+# this yaml is to create a new namespace as development
+apiVersion: v1
+kind: Namespace  # kind represents the type of Kubernetes objects to be created while using the yaml fil
+metadata:
+  name: development  #name of the namespace
+---
+#create another namespace
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: production

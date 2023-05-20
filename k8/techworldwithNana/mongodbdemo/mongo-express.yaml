@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongo-express  ## describe or heading
+  labels:
+    app: mongo-express ## podname
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongo-express
+  template:   ## templat for pods
+    metadata:
+      labels:
+        app: mongo-express
+    spec:
+      containers:
+      - name: mongo-express
+        image: mongo-express
+        ports:
+        - containerPort: 8081
+        env:
+        - name: ME_COMFIG_MONGODB_ADMINUSERNAME
+          valueFrom:
+            secretKeyRef:
+              name: mongodb-secret   ## metadata name/ heading name from secret.yaml
+              key: mongo-root-username  ## key name
+        - name: ME_COMFIG_MONGODB_ADMINPASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mongodb-secret   ## metadata name/ heading name from secret.yaml
+              key: mongo-root-password  ## key name
+        - name: ME_COMFIG_MONGODB_SERVER
+          valueFrom:
+            configMapKeyRef:
+              name: mongodb-configmap   ## metadata name/ heading name from secret.yaml
+              key: database_url  ## key name
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongodb-express-service
+spec:
+  selector:
+    app: mongo-express   ## pod-name
+  type: LoadBalancer  ## to make use of external service
+  ports:
+    - protocol: TCP
+      port: 8081  ## mongo db port mentioned in container image at docker hub
+      targetPort: 8081
+      nodePort: 30000  ## this is the port whr external ip add. opens

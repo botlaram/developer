@@ -13,6 +13,8 @@
 | Display deployments                              | `kubectl get deployment`
 | Display ReplicaSets                              | `kubectl get replicaset`
 | Display config maps                              | `kubectl get cm`
+| Display Scaled Jobs                              | `kubectl describe scaledjob <scaledjob-name> -n <namespace>`
+
 | Display service status                           | `kubectl describe service "service-name"`
 | Display changes of a config map                   | `kubectl describe cm "release-name"-configmap`
 | Switch to a different namespace                   | `kubectl config set-context --current --namespace="namespace"`

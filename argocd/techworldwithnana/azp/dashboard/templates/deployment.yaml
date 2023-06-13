@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{.Release.Name}}-dashboard
+  labels:
+    {{- include "dashboard.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "dashboard.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "dashboard.selectorLabels" . | nindent 8 }}
+    spec:
+      volumes:
+        - name: axivion-volume
+          configMap:
+            name: license-configmap
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          volumeMounts:
+            - name: axivion-volume
+              mountPath: /home/axivion/.bauhaus/license.key
+            - name: axivion-volume
+              mountPath: /home/axivion/dashboard/config/dashboard2.config
+          args:
+            - source /etc/profile.d/bauhaus_suite.sh;
+              dashserver start --nodetach
+          ports:
+            - name: http
+              containerPort: 9090
+              protocol: TCP
+          env:
+            - name: http_proxy
+              value: {{ .Values.ZF.proxy.http_proxy }}
+            - name: https_proxy
+              value: {{ .Values.ZF.proxy.https_proxy }}
+            - name: no_proxy
+              value: {{ .Values.ZF.proxy.no_proxy }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}

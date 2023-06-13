@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+ name: ley-configmap
+data:
+ license.key: |
+{{ .Files.Get 'config/license.key' | nindent 4}}
+ dashboard2.config: |
+{{ .Files.Get 'config/dashboard2.config' | nindent 4}}

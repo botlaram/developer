@@ -183,3 +183,32 @@ app.kubernetes.io/instance: {{ .Release.Name }}
 ## update the values of Values.yaml while installtion
 
 > helm install "release-name" --set data.type="9090" 
+
+# Table for commands
+
+| Execute                                           | Commands |
+| ------------------------------------------------- | -------- |
+| Helm repo add bitnami                             | `helm repo add bitnami https://charts.bitnami.com/bitnami` |
+| Helm repo update                                  | `helm repo update` |
+| Helm repo list                                    | `helm repo list` |
+| Minikube start                                    | `minikube start` |
+| Kubectl create namespace                          | `kubectl create ns "namespace"` |
+| Helm install kube-state-metrics                   | `helm install kube-state-metrics bitnami/kube-state-metrics -n metrics` |
+| Helm create chart                                 | `helm create "chart-name"` |
+| Helm lint                                         | `helm lint .` |
+| Helm template with debug                          | `helm template --dry-run --debug "release-name" .` |
+| Helm install status                               | `helm ls -n "namespace"` |
+| Kubectl get all                                   | `kubectl get all -n "namespace"` |
+| Helm install with namespace                       | `helm install demo-001 . -n development` |
+| Helm upgrade                                      | `helm upgrade "release-name" .` |
+| Helm upgrade with namespace                       | `helm upgrade demo-001 . -n development` |
+| Helm history                                      | `helm history "release-name"` |
+| Helm rollback                                     | `helm rollback "release-name"` |
+| Helm rollback with revision                       | `helm rollback "release-name" "revision-number"` |
+| Helm upgrade with specific version                | `helm upgrade kube-state-metrics bitnami/kube-state-metrics --version 0.4.0 -n metrics` |
+| Helm delete                                       | `helm delete "release-name"` |
+| Helm install with updated values                  | `helm install "release-name" --set data.type="9090"` |
+| Kubectl port-forward for kube-state-metrics        | `kubectl port-forward svc/kube-state-metrics 8080:8080 -n metrics` |
+| Helm show chart                                   | `helm show chart bitnami/kube-state-metrics` |
+| Helm show values                                  | `helm show values bitnami/kube-state-metrics` |
+| Helm uninstall                                    | `helm uninstall "release-name" . -n "namespace"` |

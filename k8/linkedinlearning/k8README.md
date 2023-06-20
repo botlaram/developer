@@ -77,13 +77,16 @@ https://keda.sh/blog/2021-05-27-azure-pipelines-scaler/#:~:text=You%20can%2C%20h
 
 # K8 architecture 
 
-![Architecture](./k8_architecture.jpg)
+## k8 Architecture Diagram
+
+![Architecture](./../../docs/png/k8_architecture.jpg)
 
 
-![IBM K8 Architecture](./k8explainibm.png)
+![IBM K8 Architecture](./../../docs/png/k8explainibm.png)
 
+## k8 hierarchy diagram
 
-![K8 Work flow Architecture](./k8_workflow_architect.PNG)
+![K8 Work flow Architecture](./../../docs/png/k8_timezone_architect.PNG)
 
 # k8 cheat scr templates
 

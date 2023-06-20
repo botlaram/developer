@@ -1,4 +1,22 @@
-add workflow diagram #todo
+# K8 architecture 
+
+## k8 Architecture Diagram
+
+## Argocd Workflow Diagram 1
+![Architecture](./../docs/png/argocd-workflow.png)
+
+## Argocd Workflow Diagram 2
+
+![Architecture](./../docs/png/agrocd-workflow2.jpg)
+
+## Argocd Workflow Diagram 3
+
+![Architecture](./../docs/png/agrocd-workflow3.PNG)
+
+## Argocd Workflow Diagram 4
+
+![Architecture](./../docs/png/agrocd-workflow4.PNG)
+
 
 1. deploy ArgoCD in k8 cluster
 2. Configure AgoCD to Track with Git Repo

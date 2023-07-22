@@ -7,6 +7,8 @@ nav:
     - Tools: tools.md
     - Git cheat: git_cheat_cmd.md
     - Source Code: sourcecode.md
+    - DevOps: k8op.md
+    - Computer Networking: networking.md
 theme:
   name: material
   language: en

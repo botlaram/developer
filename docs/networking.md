@@ -129,8 +129,13 @@ Various technologies and protocols, such as Ethernet, Wi-Fi (IEEE 802.11), and P
 
 ## HTTPS Request
 
-![Port Number](./png/https-requests.png)
+![Https Request](./png/https-requests.png)
 
 ## HTTPS Status Code
 
-![Port Number](./png/https-statuscode.png)
+![Status Code](./png/https-statuscode.png)
+
+## SMTP: (Sender Mail Transfer Protocol)
+
+![SMTP](./png/smtp.png)
+

@@ -240,6 +240,23 @@ Merge the specified commit to currently active branch:
 
     $ git merge <commit>
 
+- For instance:
+
+```
+vscode > 
+git clone url
+git checkout main branch
+git pull
+git checkout feature branch
+git merge main_branch ## if you want to update feature branch with main
+## you will get merge conflicts in vscode
+## resolve merge conflicts
+
+git commit ##check branch name and commit to your feature branch
+git push feature branch
+
+```
+
 ## 13.Git rebase
     
 Apply a sequence of commits from distinct branches into a final commit.

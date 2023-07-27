@@ -176,6 +176,11 @@ docker stop <container_id>
 docker rm <container_id>
 ```
 
+- delete all containers
+
+```
+docker container prune -f```
+
 - kill container
 
 ```

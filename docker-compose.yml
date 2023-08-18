@@ -1,0 +1,18 @@
+version: "3.8"
+
+volumes:
+  mkdocs-py:
+
+services:
+  mkdocs-image:
+    image: python:3.9
+    container_name: mkdocs-image  # Corrected: 'container-name' should be 'container_name'
+    restart: always
+    volumes:
+      - ./docs:/mnt/  # Corrected: Changed 'do/docs' to './docs'
+      - ./requirements.txt:/mnt/requirements.txt  # Corrected: Changed 'do/requirements.txt' to './requirements.txt'
+      - ./mkdocs.yml:/mnt/mkdocs.yml
+    working_dir: /mnt  # Set the working directory within the container
+    tty: true
+
+

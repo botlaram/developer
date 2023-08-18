@@ -9,6 +9,8 @@ nav:
     - Source Code: sourcecode.md
     - DevOps: k8op.md
     - Computer Networking: networking.md
+    - Linux Cmd: linux.md
+
 theme:
   name: readthedocs
   language: en

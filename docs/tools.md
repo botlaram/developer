@@ -220,6 +220,14 @@ docker image rm <image_name>
 docker system prune -a --volumes
 ```
 
+- Docker inspect container
+
+```
+docker inspect <container_id>
+```
+
+
+
 - to push images in docker hub
 
 ```

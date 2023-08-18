@@ -138,3 +138,12 @@ Various technologies and protocols, such as Ethernet, Wi-Fi (IEEE 802.11), and P
 
 ![SMTP](./png/smtp.png)
 
+
+## Delete local host running backend using netstat
+
+```
+netstat -ano | findstr 9090
+netstat -a -o | find "9090"
+taskkill /F /PID 12345
+
+```

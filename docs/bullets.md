@@ -10,7 +10,11 @@ hide:
 
 | Execute                                          | Command
 | ------------------------------------------------ | ------------------------------------------------
-| Git configuration/set username                   | `git config--global user.name "<User name>"`
+| Create virtual env                  | `python -m venv venv`
+| Activate virtual environment        | Windows`./venv/bin/activate` <br> Linux`source venv/bin/activate`
+| Deactivate virtual environment      | `deactivate`
+| Install requirements.txt            | `pip install -r requirements.txt`
+| Git clone with pip                  | `pip install `
 
 ### Docker commands
 

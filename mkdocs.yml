@@ -10,11 +10,12 @@ nav:
     - DevOps: k8op.md
     - Computer Networking: networking.md
     - Linux Cmd: linux.md
+    - Bullets: bullets.md
 
 theme:
   name: readthedocs
   language: en
-#   features:
+  features:
 #     - navigation.instant
 #     - navigation.index
 #     - navigation.tabs.sticky
@@ -52,9 +53,9 @@ theme:
 #       toggle:
 #         icon: material/brightness-4
 #         name: Switch to light mode
-#   font:
-#     text: Roboto
-#     code: Roboto Mono
+  font:
+    text: Roboto
+    code: Roboto Mono
 # plugins:
 #   - mike
 #   - search:

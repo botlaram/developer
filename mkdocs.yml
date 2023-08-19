@@ -1,19 +1,21 @@
-site_name: My Docs
-site_author: My Docs for Python
+site_name: UseMe
+site_author: botlaram
+site_description: "A clean, responsive theme for static documentation websites that are generated with MkDocs"
+repo_url: "https://github.com/botlaram"
 nav:
     - Home: index.md
     - Usage: usage.md
     - For eg: for_eg.md
     - Tools: tools.md
     - Git cheat: git_cheat_cmd.md
-    - Source Code: sourcecode.md
-    - DevOps: k8op.md
     - Computer Networking: networking.md
     - Linux Cmd: linux.md
     - Bullets: bullets.md
+    - Ansible: ansible.md
 
 theme:
   name: readthedocs
+  colorscheme: github
   language: en
   features:
 #     - navigation.instant

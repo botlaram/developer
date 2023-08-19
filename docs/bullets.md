@@ -6,6 +6,19 @@ hide:
 
 # Commands
 
+### Python commands
+
+| Execute                                          | Command
+| ------------------------------------------------ | ------------------------------------------------
+| Git configuration/set username                   | `git config--global user.name "<User name>"`
+
+### Docker commands
+
+| Execute                                          | Command
+| ------------------------------------------------ | ------------------------------------------------
+| Git configuration/set username                   | `git config--global user.name "<User name>"`
+
+
 ### Git commands
 
 | Execute                                          | Command
@@ -99,3 +112,27 @@ hide:
 | Helm show chart                                   | `helm show chart bitnami/kube-state-metrics` |
 | Helm show values                                  | `helm show values bitnami/kube-state-metrics` |
 | Helm uninstall                                    | `helm uninstall "release-name" . -n "namespace"` |
+
+
+
+
+### Openshift commands
+
+| Execute                                          | Command
+| ------------------------------------------------ | ------------------------------------------------
+| OpenShift login                                  | `oc login`
+| Create new project                               | `oc new-project <project-name>`
+| Switch to specific project                       | `oc project <project-name>`
+| Check the project name                           | `oc project`
+| Current status of project                        | `oc status`
+| Display pods                                     | `oc get pods `
+| Describe pod                                     | `oc describe pod <pod-name> `
+| Display logs                                     | `oc logs <pod-name>`
+| Display service of project                       | `goc get svc `
+| Display specific service of project              | `oc describe svc <service-name> `
+| Expose a service to the internet                 | `oc expose svc <service-name> `
+| Delete a specific service.                       | `oc delete svc <service-name> `
+| Create new application                           | `oc new-app`
+| Edit a deployment configuration                  |  `oc edit dc <deployment-config>` 
+| Scale a deployment configuration                | `oc scale dc <deployment-config> --replicas=<number>`
+| Rollout to latest version of deployment configuration | `oc rollout latest <deployment-config>`

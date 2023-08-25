@@ -6,6 +6,15 @@ hide:
 
 # Commands
 
+- [Commands](#commands)
+    - [Python commands](#python-commands)
+    - [Docker commands](#docker-commands)
+    - [Git commands](#git-commands)
+    - [Kubernetes commands](#kubernetes-commands)
+    - [Helm commands](#helm-commands)
+    - [Openshift commands](#openshift-commands)
+
+
 ### Python commands
 
 | Execute                                          | Command

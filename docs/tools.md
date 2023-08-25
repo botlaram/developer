@@ -4,7 +4,6 @@ hide:
   - tags
 ---
 
-<h1></h1>
 
 # Cheat Code For Tools
  

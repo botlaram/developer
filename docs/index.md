@@ -18,4 +18,4 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
 ## About 
 
-This documentation contains details of Python Module and Cheat commands of tools.
+This documentation contains details of Python Module, Devops Applications and Cheat commands of tools.

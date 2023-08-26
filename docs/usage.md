@@ -4,21 +4,7 @@ hide:
   - tags
 ---
  
-- [Grab the Python stuff here ...😉](#grab-the-python-stuff-here-)
-    - [use of __init__.py file](#use-of-initpy-file)
-    - [args and kwargs](#args-and-kwargs)
-    - [magic methods](#magic-methods)
-    - [isinstance](#isinstance)
-    - [decorator](#decorator)
-    - [Lambda](#lambda)
-    - [Filter](#filter)
-    - [Mapping](#mapping)
-    - [List Comprehension](#list-comprehension)
-    - [read and write](#read-and-write)
-    - [dataclass](#dataclass)
-    - [logging](#logging)
-    - [regex](#regex)
-
+<h1></h1>
 
 # Grab the Python stuff here ...😉
 

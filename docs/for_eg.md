@@ -4,6 +4,20 @@ hide:
   - tags
 ---
  
+- [Args and Kwargs](#args-and-kwargs)
+- [Lambda](#lambda)
+- [Filter](#filter)
+- [Mapping](#mapping)
+- [List Comprehension](#list-comprehension)
+- [Decorator](#decorator)
+- [Read Write File](#read-write-file)
+- [Logging](#logging)
+- [Class](#class)
+  - [Isinstance](#isinstance)
+  - [Dataclass](#dataclass)
+  - [Method-Static](#method-static)
+  - [Inheritance](#inheritance)
+ 
 ##Builtin
  
 ### Args and Kwargs

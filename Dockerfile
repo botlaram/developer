@@ -6,12 +6,9 @@
 
 # COPY mkdocs.yml /app/
 # COPY ./docs/ /app/docs/
-# COPY requirements.txt /app/
-
 
 # # Install any needed packages specified in requirements.txt
-# RUN pip install --no-cache-dir -r requirements.txt
-
+# RUN pip install mkdocs mkdocs-material
 
 # # Expose the default MkDocs port
 # EXPOSE 8000
@@ -40,7 +37,7 @@ WORKDIR /app/developer
 RUN git checkout working
 
 # Install MkDocs and required plugins
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install mkdocs mkdocs-material
 
 # Expose the default MkDocs port
 EXPOSE 8000

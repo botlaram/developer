@@ -13,6 +13,10 @@
     - [Pod](#pod)
     - [Service](#service)
     - [Ingress](#ingress)
+      - [Architecture of Ingress](#architecture-of-ingress)
+      - [Ingress YAML](#ingress-yaml)
+      - [Ingress Vs Internal Service](#ingress-vs-internal-service)
+      - [Ingress YAML for path](#ingress-yaml-for-path)
     - [Volumes](#volumes)
     - [Secret](#secret)
     - [ConfigMap](#configmap)
@@ -81,6 +85,18 @@ Automatic bin packing You provide Kubernetes with a cluster of nodes that it can
 ### Ingress
 
 - [ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/)
+
+#### Architecture of Ingress
+![image](./png/ingress1.png)
+
+#### Ingress YAML
+![image](./png/ingress2.png)
+
+#### Ingress Vs Internal Service
+![image](./png/ingress3.png)
+
+#### Ingress YAML for path
+![image](./png/ingress4.png)
 
 ### Volumes
 

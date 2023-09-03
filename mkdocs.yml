@@ -12,6 +12,7 @@ nav:
     - Linux Cmd: linux.md
     - Bullets: bullets.md
     - Kubernetes: kubernetes.md
+    - K8-Docs: k8-docs.md
     - Ansible: ansible.md
 
 theme:

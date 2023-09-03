@@ -114,6 +114,11 @@ print(double_List)
 ### List Comprehension
 
 ```
+syntax > [return-value for-loop if-condition]
+
+```
+
+```
 nums_List=[5,6,7,8]
  
 ##listcomprehension for maping

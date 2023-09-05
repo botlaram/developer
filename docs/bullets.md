@@ -149,3 +149,8 @@ hide:
 | Edit a deployment configuration                  |  `oc edit dc <deployment-config>` 
 | Scale a deployment configuration                | `oc scale dc <deployment-config> --replicas=<number>`
 | Rollout to latest version of deployment configuration | `oc rollout latest <deployment-config>`
+
+
+
+
+

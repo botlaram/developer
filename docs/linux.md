@@ -5,11 +5,17 @@
 
 ### Chmod
 
-Chmod is use for Modify permission of file/directory. 
+`drwxrwxrwx > rwx abbrevates as Read, Write , Delete/Execute`
 
-Chown is use for providing permissios or changing the ownership to other User
+ - Chmod is use for Modify permission of file/directory. 
+   - syntax `chmod 777 "file-name/folder-name"`
 
-drwxrwxrwx > rwx abbrevates as Read, Write , Delete/Execute
+
+ - Chown is use for providing permissions or changing the ownership to other User
+   - syntax to change Owner/User `chown "user-name" "file/folder-name"`
+   - to change Owner and Group `chown "user-name":"group-name" "file/folder-name"`
+
+
 
 It contains Owner, Group, Public
 
@@ -36,7 +42,7 @@ It contains Owner, Group, Public
 | Copy file to other folder             | cp "file-name1" "dir-name"/"file-name1"           
 | Modify Permission of file/dir           | chmod "777" "file/dir-name"
 | Change ownership of file/dir           | chown "user-name" "file/dir-name"
-| Change ownership & group for file/dir           | chown "user-name":"user-name" "file/dir-name"
+| Change ownership & group for file/dir           | chown "user-name":"grp-name" "file/dir-name"
 
 ### Tar Commands
 
@@ -52,11 +58,30 @@ It contains Owner, Group, Public
 | extract tar file               | tar -xvf "file-name.tar"  -v: contents of tar, -f: tar filename                      
 | compress files                   | gzip  "fil-ename"
 | decompress files                   | gunzip "file-name"  
+| to update system                     | sudo apt update
 
+### Advance Commands
 
-
-
+| Execute                                        | Command
+| ---------------------------------------------- | ------------------------------------------------
+| send file to other system using IP add.         | scp "file-path" root@IPofothersystem:/path
+| check network connectivity           | ping google.com
+| display network configure   | ifconfig
+| display network connection             | netstat
+| control system service & settings     | `systemctl`
+| to start nginx | `systemctl start nginx` `systemctl status nginx` `systemctl stop nginx`
+| add new user                  | useradd "user-name"
+| change password for user          | passwd "user-name"
+| switch user          | su
+| check current user   | whoami
+| system Disk usage | df 
+| mount file system           | sudo mount /dev/folder /mnt/folder
+| check packages or app install path  | which cmake
+| save terminal output to txt file | `touch file.txt` `ls | tee file.txt`
 | Check cPU, RAM usage  | htop
+
+
+
 
 |cut                                             | Cut out sections of a file
 |gzip                                            | Compress or decompress files using gzip

@@ -13,6 +13,7 @@ nav:
     - Bullets: bullets.md
     - Kubernetes: kubernetes.md
     - K8-Docs: k8-docs.md
+    - Packer: packer.md
     - Ansible: ansible.md
 
 theme:

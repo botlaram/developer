@@ -1,5 +1,17 @@
 # Packer
 
+
+
+
+- [Packer](#packer)
+  - [What is Packer?](#what-is-packer)
+  - [Stages of Packer](#stages-of-packer)
+  - [Usage of Packer](#usage-of-packer)
+    - [Mutable and Immutable stage](#mutable-and-immutable-stage)
+      - [Mutable](#mutable)
+      - [Immutable](#immutable)
+
+
 ## What is Packer?
 
 Packer is a tools which help to create customize Image from multiple platform from a single source configuration.
@@ -14,27 +26,27 @@ Packer is a tools which help to create customize Image from multiple platform fr
 
 ### Mutable and Immutable stage
 
-WHY to use PACKER.
+WHY to use PACKER.????
 
-Well there are to stages of create Images > Mutable and Immutable
+- Well there are to stages of create Images > Mutable and Immutable
 
-Mutable means changing Continuosly.
+- Mutable means changing Continuosly.
 
-Immutable means needs to configure only one time.
+- Immutable means needs to configure only one time.
 
-Mutable is old way to configure the Images.
+- Mutable is old way to configure the Images.
 
-Where it needs to cofingure after deploying the application 
+- Where it needs to cofingure after deploying the application 
 
-If any case, we want to deploy to multiple server, configure multiplt server individually may create new bugs.
+- If any case, we want to deploy to multiple server, configure multiplt server individually may create new bugs.
 
-Where as Packer use Immutable, which is configure deploy deplying to server.
+- Where as Packer use Immutable, which is configure deploy deplying to server.
 
-Using single configure Image we can spin up multiple server.
+- Using single configure Image we can spin up multiple server.
 
 #### Mutable
 
-DEPLOY > SERVER > CONFIGURE
+**DEPLOY > SERVER > CONFIGURE**
 
 ![Mutable](./png/mutable1.png)
 
@@ -45,7 +57,7 @@ we need to isntall it each individual server, which can lead to issues and Bugs.
 
 #### Immutable
 
-DEPLOY > CONFIGURE > SERVER
+**DEPLOY > CONFIGURE > SERVER**
 
 ![imMutable](./png/immutable1.png)
 

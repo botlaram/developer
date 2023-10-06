@@ -6,7 +6,7 @@ For full documentation visit [persistent-volume](https://jhooq.com/how-to-use-pe
 
 ![pvc](/docs/png/pvc-architecture.png)
 
-![pvc](/docs/png/pvc-architecture.png)
+![pvc](jhooq-pv.png)
 
     kubectl apply -f .\persistent-volume.yaml
 

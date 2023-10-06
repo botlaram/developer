@@ -3,7 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: kube-pvc
 spec:
-  volumeName: kube-demo-pv
+  volumeName: kube-demo-pv             ##pv name
   storageClassName: local-storage
   volumeMode: Filesystem
   accessModes:

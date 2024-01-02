@@ -32,7 +32,7 @@
 > passwd  #set password
 
 ## verify connection from master
-> ssh-copy-id <username>@<slave_ip_address>
+> ssh-copy-id <username>@<slave_ip_address> #this will ask to enter slave password
 
 ## login to slave machine, from master (execute the following command in master)
 > sudo ssh <slave-username>@<ip-address-of-slave>
@@ -43,3 +43,13 @@
 > vi /etc/hosts #update ip_Address of slave in hosts file
 
 > ansible -i /etc/hosts -m ping all
+
+## execute ansible adhoc copy command (in master)
+> cd /opt && touch file.txt
+
+> ansible all -i /etc/hosts --module-name copy --args "src=/opt/file.txt dest=/tmp/file.txt"
+
+## demo1: install git using ansible in slave
+> apt remove git #if git in already in slave, uninstall
+
+> ansible-galaxy init git

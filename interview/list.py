@@ -15,7 +15,7 @@ print("count : ",list1.count(9))
 ##length of list
 print("len : ",len(list1))
 
-##extend
+##extend (use for adding iterable list to current list)
 list1.extend([6546,8,9])
 print("extend : ",list1)
 
@@ -54,8 +54,3 @@ print("max :",max(list1))
 ##clear
 list1.clear()
 print("clear : ",list1)
-
-
-
-
-

@@ -15,6 +15,23 @@
    - syntax to change Owner/User `chown "user-name" "file/folder-name"`
    - to change Owner and Group `chown "user-name":"group-name" "file/folder-name"`
 
+### Add User
+ - to add user in linux
+   - syntax `sudo adduser <user-name>`  #it will ask for password enter new password
+ 
+ - switch to new user
+   - syntax `su - <user-name>`  
+ 
+ - after login with new user
+   - try to execute `apt-get update` #you may be get error as incident will be reported.
+ 
+ - update the permissions for new user
+   - `exit`  #logout from the new user
+ 
+ - for the root user
+   - `sudo visudo`
+   - update members of the admin group
+     - `%<username> ALL=(ALL) NOPASSWD:ALL`     #add this line
 
 
 It contains Owner, Group, Public

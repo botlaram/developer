@@ -53,7 +53,27 @@
 > apt remove git #if git in already in slave, uninstall
 
 ### template for ansible tasks
-> ansible-galaxy init demo
+> ansible-galaxy init demo   #below is tree structure of template
+
+```tree
+.
+|-- README.md
+|-- defaults
+|   `-- main.yml
+|-- files
+|-- handlers
+|   `-- main.yml
+|-- meta
+|   `-- main.yml
+|-- tasks
+|   `-- main.yml
+|-- templates
+|-- tests
+|   |-- inventory
+|   `-- test.yml
+`-- vars
+    `-- main.yml
+```
 
 ### task/main.yml update the script to install git
 

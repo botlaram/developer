@@ -143,43 +143,6 @@ create a configmap i.e kubernetes object to store env, port values
 {{end}}
 ``` 
 
-## function in helm can be defined by adding in _helpers.tpl file 
-
-eg: 
-```
-{{/*
-Create chart name and version as used by the chart label.
-*/}}
-{{- define "axivion.chart" -}}
-{{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
-{{- end }}
-
-{{/*
-Common labels
-*/}}
-{{- define "axivion.labels" -}}
-helm.sh/chart: {{ include "axivion.chart" . }}
-{{ include "axivion.selectorLabels" . }}
-{{- if .Chart.AppVersion }}
-app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
-{{- end }}
-app.kubernetes.io/managed-by: {{ .Release.Service }}
-responsible: "PhoenixTeam"
-# {{- range $key, $value := .Values.labels }}
-#   {{ $key }}: {{ $value }}
-# {{- end }}
-{{- end }}
-
-{{/*
-Selector labels
-*/}}
-{{- define "axivion.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "axivion.name" . }}
-app.kubernetes.io/instance: {{ .Release.Name }}
-{{- end }}
-
-```
-
 ## update the values of Values.yaml while installtion
 
 > helm install "release-name" --set data.type="9090" 

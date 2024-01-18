@@ -40,6 +40,6 @@ build {
     post-processor "docker-push" {
     login          = true
     login_username = "imuser"
-    login_password = "Ram@123456"
+    login_password = ""
   }
 }

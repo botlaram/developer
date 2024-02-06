@@ -10,7 +10,7 @@ Docker is a software development tool and a virtualization technology that makes
 
 1. Architecture of Operating System
 
-![Alt text](image-1.png)
+![Alt text](os-architecture.png)
 
 
 ![Alt text](containers-vs-virtual-machines.jpg)
@@ -20,7 +20,7 @@ Docker is a software development tool and a virtualization technology that makes
 * docker use system's OS kernel
 * where as Virtual MAchine creates its own OS Kernel in users system (it allocate CPU,RAM more compare to docker)
 
-![Alt text](image-2.png)
+![Alt text](dockervsvm.png)
 
 ![Alt text](dockervsVM.gif)
 
@@ -42,7 +42,7 @@ Container:
 
 ### How application runs Before using docker Containers
 
-![Alt text](image.png)
+![Alt text](developer-variant.png)
 
 1. Installation process different (for windox-.exe, ububut-.zip/tar file)
 2. Due to Different OS (file wont execute)

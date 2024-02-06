@@ -31,7 +31,6 @@ def quick_sort(nums):
         for x in nums[1:]:
             if x > pivot:
                 greater.append(x)
-                
         return quick_sort(lesser)+[pivot]+quick_sort(greater)
     
 nums=[22,11,88,66,55,77,33,44]

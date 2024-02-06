@@ -1,16 +1,16 @@
-# import copy 
+# A Simple Python program to demonstrate working
+# of yield
 
-# list =[1,[2,3,4],5]
+# A generator function that yields 1 for the first time,
+# 2 second time and 3 third time
 
-# shallow_copy=copy.copy(list)
-# shallow_copy[1][0]="x"
 
-# print(shallow_copy)
-# print(list)
+def simpleGeneratorFun():
+	yield 1
+	yield 2
+	yield 3
 
-# list2=[6,[7,8,9],10]
-# deep_copy=copy.deepcopy(list2)
-# deep_copy[1][0]="y"
 
-# print(list2)
-# print(deep_copy)
+# Driver code to check above generator function
+for value in simpleGeneratorFun():
+	print(value)

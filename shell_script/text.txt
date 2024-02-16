@@ -1,0 +1,8 @@
+hello , this is sample text
+to learn shell scripting
+
+myself Rama
+
+this line is will get deleted using sed
+
+display this line, if Rama there

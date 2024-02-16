@@ -1,0 +1,16 @@
+{
+    "name": "Ubuntu Container",
+    "dockerFile": "Dockerfile",
+
+    // Use 'settings' to set *default* container specific settings.json values on container create.
+    // You can edit these settings after create using File > Preferences > Settings > Remote.
+    "settings": { 
+        "terminal.integrated.shell.linux": "/bin/bash"
+    },
+
+    // Use 'postCreateCommand' to run commands after the container is created.
+    "postCreateCommand": "echo 'Container was created.'",
+
+    // Add the IDs of extensions you want installed when the container is created.
+    "extensions": []
+}

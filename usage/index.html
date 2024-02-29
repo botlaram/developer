@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="botlaram" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Usage - UseMe</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Usage";
+        var mkdocs_page_input_path = "usage.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> UseMe
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Usage</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#builtin-or-modules">Builtin or Modules</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#use-of-initpy-file">use of init.py file</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#args-and-kwargs">args and kwargs</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#magic-methods">magic methods</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#isinstance">isinstance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#decorator">decorator</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#lambda">Lambda</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#filter">Filter</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#mapping">Mapping</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#list-comprehension">List Comprehension</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#read-and-write">read and write</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#dataclass">dataclass</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#logging">logging</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#regex">regex</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../for_eg/">For eg</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../tools/">Tools</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../git_cheat_cmd/">Git cheat</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../networking/">Computer Networking</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../linux/">Linux Cmd</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../bullets/">Bullets</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../kubernetes/">Kubernetes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../k8-docs/">K8-Docs</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../packer/">Packer</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ansible/">Ansible</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">UseMe</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Usage</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/botlaram/edit/master/docs/usage.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1></h1>
+
+<h1 id="grab-the-python-stuff-here">Grab the Python stuff here ...😉</h1>
+<p>Usage doc is to state syntax for builtin funct. and modules</p>
+<h2 id="builtin-or-modules">Builtin or Modules</h2>
+<h3 id="use-of-initpy-file">use of <strong>init</strong>.py file</h3>
+<p><strong>init</strong>.py is used t import packages from a particular directory</p>
+<p><img alt="Init file" src="../png/initfile.png" /></p>
+<pre><code>Module: A single python script.
+
+Package: A collection of modules. (for eg: directory in which all py files contains)
+</code></pre>
+<p>click <a href="https://towardsdatascience.com/understanding-python-imports-init-py-and-pythonpath-once-and-for-all-4c5249ab6355">here</a> for the documentation for usage of init file.</p>
+<h3 id="args-and-kwargs">args and kwargs</h3>
+<ul>
+<li>
+<p>In Python, we can pass a variable number of arguments to a function using special symbols. There are two special symbols:</p>
+</li>
+<li>
+<p>*args (Non Keyword Arguments)</p>
+</li>
+<li>
+<p>**kwargs (Keyword Arguments)</p>
+</li>
+<li>
+<p>We use <strong>*args and </strong>kwargs as an argument when we are unsure about the number of arguments to pass in the functions.</p>
+</li>
+</ul>
+<h3 id="magic-methods">magic methods</h3>
+<pre><code>num=10
+num + 5
+15
+num.__add__(5)  ##magic method __add__
+15
+</code></pre>
+<p>click <a href="https://www.tutorialsteacher.com/python/magic-methods-in-python">here</a> for more magic method</p>
+<h3 id="isinstance">isinstance</h3>
+<p>The isinstance() function returns True if the specified object is of the specified type, otherwise False</p>
+<ul>
+<li>syntax</li>
+</ul>
+<pre><code>isinstance(object, type)
+</code></pre>
+<h3 id="decorator">decorator</h3>
+<ul>
+<li>
+<p>decorators allow you to change the behavior of a function without modifying the function itself.</p>
+</li>
+<li>
+<p>syntax</p>
+</li>
+</ul>
+<pre><code>def my_decorator_func(func):
+
+    def wrapper_func():
+        # Do something before the function.
+        func()
+        # Do something after the function.
+    return wrapper_func
+
+#using decoarate
+
+@my_decorator_func
+def my_func():
+    pass
+
+</code></pre>
+<h3 id="lambda">Lambda</h3>
+<p>lambda basic form</p>
+<ul>
+<li>
+<p>lambda (parameters):(return_Val)</p>
+</li>
+<li>
+<p>lambda x,y:x+y</p>
+</li>
+</ul>
+<p>Value will return automatically</p>
+<p><img alt="Lambda Syntax" src="./png/lambda_syn.png" /></p>
+<ul>
+<li>lambda is used to avoid a small function
+so that it can be placed in one line</li>
+</ul>
+<h3 id="filter">Filter</h3>
+<p>Filtering in python (which is similar to mapping)</p>
+<ul>
+<li>Syntax</li>
+</ul>
+<pre><code>filter(some_function,my_list)
+</code></pre>
+<p><img alt="Filter eg" src="./png/filter_eg.png" /></p>
+<h3 id="mapping">Mapping</h3>
+<p>Mapping is to map the values with respt. parameters</p>
+<ul>
+<li>Syntax</li>
+</ul>
+<pre><code>map(some_function,my_list)
+</code></pre>
+<ul>
+<li>for eg: mapping the dict. Key and vlaues</li>
+</ul>
+<p><img alt="Mapping Eg" src="./png/mapping_eg.png" /></p>
+<ul>
+<li>Mapping is used by calling it on the List and passing it some function</li>
+</ul>
+<p><img alt="Mapping Eg" src="./png/mapping_eg2.png" /></p>
+<h3 id="list-comprehension">List Comprehension</h3>
+<p>the simply readable way of transforming elements in list either by mapping or filtering</p>
+<ul>
+<li>List Comprehension Syntax for Mapping</li>
+</ul>
+<pre><code>var = class_type({return_value} {for loop})
+</code></pre>
+<ul>
+<li>List Comprehension Syntax for Filtering</li>
+</ul>
+<pre><code>var = class_type({return_value} {for loop} {condition})
+</code></pre>
+<h3 id="read-and-write">read and write</h3>
+<ul>
+<li>syntax</li>
+</ul>
+<pre><code>f = open({file_path},{file_mode})
+</code></pre>
+<h3 id="dataclass">dataclass</h3>
+<ul>
+<li>
+<p>this module define classes that only act as data containers and when we do that, we spend a consequent amount of time writing boilerplate code with tons of arguments, an ugly <strong>init</strong> method and many overridden functions.</p>
+</li>
+<li>
+<p>When you use dataclasses, you first have to import dataclass and then use it as a decorator before the class you define.</p>
+</li>
+<li>
+<p>syntax</p>
+</li>
+</ul>
+<pre><code>from dataclasses import dataclass   ##import dataclass
+
+@dataclass
+class Book:
+
+    title : str    ###variables are define without using __init__ instance
+    author : str
+    price : float
+
+book=Book(&quot;title&quot;,&quot;author&quot;,price)
+print(book.price)           ###print values
+</code></pre>
+<h3 id="logging">logging</h3>
+<ul>
+<li>Logging is a means of tracking events that happen when some software runs. The software’s developer adds logging calls to their code to indicate that certain events have occurred.Due to this logging method, the record of events can be saved unlike print which only displays the content in console.</li>
+</ul>
+<p>different level of logging, also logging methods should be in following order:</p>
+<ol>
+<li>Basic logging method</li>
+</ol>
+<pre><code>logging.debug('debug')
+logging.info(&quot;info&quot;)
+logging.warning('warn')
+logging.error('error')
+logging.critical('critical')
+</code></pre>
+<ol>
+<li>Logging with configuration</li>
+</ol>
+<pre><code>import logging
+logging.basicConfig(level=logging.INFO, filename=&quot;{filename.log}&quot;,filemode=&quot;w&quot;,
+                    format=&quot;%(asctime)s - %(levelname)s - %(funcName)s - %(lineno)s - %(message)s&quot;)  ##funcname display the actual fnction name
+</code></pre>
+<h3 id="regex">regex</h3>
+<ul>
+<li>The re module offers a set of functions that allows us to search a string for a match:</li>
+</ul>
+<p>most used modules in regex are :</p>
+<p>Function    Description</p>
+<ol>
+<li>
+<p>findall &gt; Returns a list containing all matches ##returns all matched searched elements</p>
+</li>
+<li>
+<p>search &gt; Returns a Match object if there is a match anywhere in the string</p>
+</li>
+<li>
+<p>split &gt; Returns a list where the string has been split at each match</p>
+</li>
+<li>
+<p>sub &gt; Replaces one or many matches with a string</p>
+</li>
+<li>
+<p>finditer &gt; </p>
+</li>
+</ol>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href=".." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../for_eg/" class="btn btn-neutral float-right" title="For eg">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/botlaram" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../for_eg/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

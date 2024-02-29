@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="botlaram" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Kubernetes - UseMe</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Kubernetes";
+        var mkdocs_page_input_path = "kubernetes.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> UseMe
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../usage/">Usage</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../for_eg/">For eg</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../tools/">Tools</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../git_cheat_cmd/">Git cheat</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../networking/">Computer Networking</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../linux/">Linux Cmd</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../bullets/">Bullets</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Kubernetes</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#defination">Defination</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#why-to-use-k8">Why to use K8</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#architecture">Architecture</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#-architecture-diagram">- Architecture Diagram</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-k8-workflow-diagram">- K8 workflow diagram</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#k8-components">K8 components</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#deployment">Deployment</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#node">Node</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#pod">Pod</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#service">Service</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ingress">Ingress</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#architecture-of-ingress">Architecture of Ingress</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#ingress-yaml">Ingress YAML</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#ingress-vs-internal-service">Ingress Vs Internal Service</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#ingress-yaml-for-path">Ingress YAML for path</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#volumes">Volumes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#secret">Secret</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#configmap">ConfigMap</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#statefulset">StatefulSet</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#minikube-abd-kubectl-setup">Minikube abd Kubectl-Setup</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#k8-conf-yam-file">K8 conf yam file</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#k8-namespaces">K8 namespaces</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#k8-ingress">K8 ingress</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#helm">Helm</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#volumes-persisting-data">Volumes-Persisting Data</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#k8-stateful-set">K8 stateful set</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../k8-docs/">K8-Docs</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../packer/">Packer</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ansible/">Ansible</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">UseMe</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Kubernetes</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/botlaram/edit/master/docs/kubernetes.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="kubernetes">Kubernetes</h1>
+<ul>
+<li><a href="#kubernetes">Kubernetes</a></li>
+<li><a href="#overview">Overview</a><ul>
+<li><a href="#defination">Defination</a></li>
+<li><a href="#why-to-use-k8">Why to use K8</a></li>
+</ul>
+</li>
+<li><a href="#architecture">Architecture</a><ul>
+<li><a href="#--architecture-diagram">- Architecture Diagram</a></li>
+<li><a href="#--k8-workflow-diagram">- K8 workflow diagram</a></li>
+</ul>
+</li>
+<li><a href="#k8-components">K8 components</a><ul>
+<li><a href="#deployment">Deployment</a></li>
+<li><a href="#node">Node</a></li>
+<li><a href="#pod">Pod</a></li>
+<li><a href="#service">Service</a></li>
+<li><a href="#ingress">Ingress</a></li>
+<li><a href="#architecture-of-ingress">Architecture of Ingress</a></li>
+<li><a href="#ingress-yaml">Ingress YAML</a></li>
+<li><a href="#ingress-vs-internal-service">Ingress Vs Internal Service</a></li>
+<li><a href="#ingress-yaml-for-path">Ingress YAML for path</a></li>
+<li><a href="#volumes">Volumes</a></li>
+<li><a href="#secret">Secret</a></li>
+<li><a href="#configmap">ConfigMap</a></li>
+<li><a href="#statefulset">StatefulSet</a></li>
+</ul>
+</li>
+<li><a href="#minikube-abd-kubectl-setup">Minikube abd Kubectl-Setup</a></li>
+<li><a href="#k8-conf-yam-file">K8 conf yam file</a></li>
+<li><a href="#k8-namespaces">K8 namespaces</a></li>
+<li><a href="#k8-ingress">K8 ingress</a></li>
+<li><a href="#helm">Helm</a></li>
+<li><a href="#volumes-persisting-data">Volumes-Persisting Data</a></li>
+<li><a href="#k8-stateful-set">K8 stateful set</a></li>
+</ul>
+<h2 id="overview">Overview</h2>
+<h3 id="defination">Defination</h3>
+<p>Kubernetes is a portable, extensible, open source platform for managing containerized workloads and services, that facilitates both declarative configuration and automation. It has a large, rapidly growing ecosystem. Kubernetes services, support, and tools are widely available.</p>
+<ul>
+<li>For more information visit <strong><a href="https://kubernetes.io/docs/concepts/overview/components/">here</a></strong></li>
+</ul>
+<h3 id="why-to-use-k8">Why to use K8</h3>
+<p>Containers are a good way to bundle and run your applications. In a production environment, you need to manage the containers that run the applications and ensure that there is no downtime. For example, if a container goes down, another container needs to start. Wouldn't it be easier if this behavior was handled by a system?</p>
+<p>That's how Kubernetes comes to the rescue! Kubernetes provides you with a framework to run distributed systems resiliently. It takes care of scaling and failover for your application, provides deployment patterns, and more. For example: Kubernetes can easily manage a canary deployment for your system.</p>
+<ul>
+<li>Kubernetes provides you with:</li>
+</ul>
+<blockquote>
+<ul>
+<li>
+<p><strong>Service discovery and load balancing</strong> Kubernetes can expose a container using the DNS name or using their own IP address. If traffic to a container is high, Kubernetes is able to load balance and distribute the network traffic so that the deployment is stable.</p>
+</li>
+<li>
+<p><strong>Storage orchestration</strong> Kubernetes allows you to automatically mount a storage system of your choice, such as local storages, public cloud providers, and more.</p>
+</li>
+<li>
+<p><strong>Automated rollouts and rollbacks</strong> You can describe the desired state for your deployed containers using Kubernetes, and it can change the actual state to the desired state at a controlled rate. For example, you can automate Kubernetes to create new containers for your deployment, remove existing containers and adopt all their resources to the new container.
+Automatic bin packing You provide Kubernetes with a cluster of nodes that it can use to run containerized tasks. You tell Kubernetes how much CPU and memory (RAM) each container needs. Kubernetes can fit containers onto your nodes to make the best use of your resources.</p>
+</li>
+<li>
+<p><strong>Self-healing</strong> Kubernetes restarts containers that fail, replaces containers, kills containers that don't respond to your user-defined health check, and doesn't advertise them to clients until they are ready to serve.</p>
+</li>
+<li>
+<p><strong>Secret and configuration management</strong> Kubernetes lets you store and manage sensitive information, such as passwords, OAuth tokens, and SSH keys. You can deploy and update secrets and application configuration without rebuilding your container images, and without exposing secrets in your stack configuration.</p>
+</li>
+</ul>
+</blockquote>
+<h2 id="architecture">Architecture</h2>
+<h3 id="-architecture-diagram">- Architecture Diagram</h3>
+<p><img alt="Architecture" src="../png/k8_architecture.jpg" /></p>
+<h3 id="-k8-workflow-diagram">- K8 workflow diagram</h3>
+<p><img alt="K8 Work flow Architecture" src="../png/k8_timezone_architect.PNG" /></p>
+<h2 id="k8-components">K8 components</h2>
+<h3 id="deployment">Deployment</h3>
+<h3 id="node">Node</h3>
+<ul>
+<li><a href="https://kubernetes.io/docs/concepts/architecture/nodes/">nodes</a></li>
+</ul>
+<h3 id="pod">Pod</h3>
+<ul>
+<li><a href="https://kubernetes.io/docs/concepts/workloads/pods/">pods</a></li>
+</ul>
+<h3 id="service">Service</h3>
+<ul>
+<li><a href="https://kubernetes.io/docs/concepts/services-networking/service/">service</a></li>
+</ul>
+<h3 id="ingress">Ingress</h3>
+<ul>
+<li><a href="https://kubernetes.io/docs/concepts/services-networking/ingress/">ingress</a></li>
+</ul>
+<h4 id="architecture-of-ingress">Architecture of Ingress</h4>
+<p><img alt="image" src="../png/ingress1.png" /></p>
+<h4 id="ingress-yaml">Ingress YAML</h4>
+<p><img alt="image" src="../png/ingress2.png" /></p>
+<h4 id="ingress-vs-internal-service">Ingress Vs Internal Service</h4>
+<p><img alt="image" src="../png/ingress3.png" /></p>
+<h4 id="ingress-yaml-for-path">Ingress YAML for path</h4>
+<p><img alt="image" src="../png/ingress4.png" /></p>
+<h3 id="volumes">Volumes</h3>
+<h3 id="secret">Secret</h3>
+<h3 id="configmap">ConfigMap</h3>
+<h3 id="statefulset">StatefulSet</h3>
+<h2 id="minikube-abd-kubectl-setup">Minikube abd Kubectl-Setup</h2>
+<h2 id="k8-conf-yam-file">K8 conf yam file</h2>
+<h2 id="k8-namespaces">K8 namespaces</h2>
+<h2 id="k8-ingress">K8 ingress</h2>
+<h2 id="helm">Helm</h2>
+<h2 id="volumes-persisting-data">Volumes-Persisting Data</h2>
+<h2 id="k8-stateful-set">K8 stateful set</h2>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../bullets/" class="btn btn-neutral float-left" title="Bullets"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../k8-docs/" class="btn btn-neutral float-right" title="K8-Docs">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/botlaram" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../bullets/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../k8-docs/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

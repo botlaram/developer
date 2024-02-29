@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="botlaram" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Computer Networking - UseMe</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Computer Networking";
+        var mkdocs_page_input_path = "networking.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> UseMe
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../usage/">Usage</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../for_eg/">For eg</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../tools/">Tools</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../git_cheat_cmd/">Git cheat</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Computer Networking</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#protocol">Protocol:</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#tcp-transmission-control-protocol">TCP (Transmission Control Protocol):</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#http-hypertext-transfer-protocol">HTTP (Hypertext Transfer Protocol):</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#udp-user-datagram-protocol">UDP (User Datagram Protocol):</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#router">Router</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#port-number">Port Number:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#internet-speed">Internet speed</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#osi-model">OSI Model</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#physical-layer-layer-1">Physical Layer (Layer 1):</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#data-link-layer-layer-2">Data Link Layer (Layer 2):</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#network-layer-layer-3">Network Layer (Layer 3):</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#transport-layer-layer-4">Transport Layer (Layer 4):</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#session-layer-layer-5">Session Layer (Layer 5):</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#presentation-layer-layer-6">Presentation Layer (Layer 6):</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#application-layer-layer-7">Application Layer (Layer 7):</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#tcpip">TCP/IP</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#application-layer">Application Layer:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#transport-layer">Transport Layer:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#internet-layer">Internet Layer:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#link-layer">Link Layer:</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#osi-vs-tcpip">OSI vs TCP/IP</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#https-request">HTTPS Request</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#https-status-code">HTTPS Status Code</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#smtp-sender-mail-transfer-protocol">SMTP: (Sender Mail Transfer Protocol)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#delete-local-host-running-backend-using-netstat">Delete local host running backend using netstat</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../linux/">Linux Cmd</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../bullets/">Bullets</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../kubernetes/">Kubernetes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../k8-docs/">K8-Docs</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../packer/">Packer</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ansible/">Ansible</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">UseMe</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Computer Networking</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/botlaram/edit/master/docs/networking.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="computer-networking">Computer Networking</h1>
+<ul>
+<li><a href="#computer-networking">Computer Networking</a></li>
+<li><a href="#protocol">Protocol:</a><ul>
+<li><a href="#tcp-transmission-control-protocol">TCP (Transmission Control Protocol):</a></li>
+<li><a href="#http-hypertext-transfer-protocol">HTTP (Hypertext Transfer Protocol):</a></li>
+<li><a href="#udp-user-datagram-protocol">UDP (User Datagram Protocol):</a></li>
+</ul>
+</li>
+<li><a href="#router">Router</a></li>
+<li><a href="#port-number">Port Number:</a></li>
+<li><a href="#internet-speed">Internet speed</a></li>
+<li><a href="#osi-model">OSI Model</a><ul>
+<li><a href="#physical-layer-layer-1">Physical Layer (Layer 1):</a></li>
+<li><a href="#data-link-layer-layer-2">Data Link Layer (Layer 2):</a></li>
+<li><a href="#network-layer-layer-3">Network Layer (Layer 3):</a></li>
+<li><a href="#transport-layer-layer-4">Transport Layer (Layer 4):</a></li>
+<li><a href="#session-layer-layer-5">Session Layer (Layer 5):</a></li>
+<li><a href="#presentation-layer-layer-6">Presentation Layer (Layer 6):</a></li>
+<li><a href="#application-layer-layer-7">Application Layer (Layer 7):</a></li>
+</ul>
+</li>
+<li><a href="#tcpip">TCP/IP</a><ul>
+<li><a href="#application-layer">Application Layer:</a></li>
+<li><a href="#transport-layer">Transport Layer:</a></li>
+<li><a href="#internet-layer">Internet Layer:</a></li>
+<li><a href="#link-layer">Link Layer:</a></li>
+</ul>
+</li>
+<li><a href="#osi-vs-tcpip">OSI vs TCP/IP</a></li>
+<li><a href="#https-request">HTTPS Request</a></li>
+<li><a href="#https-status-code">HTTPS Status Code</a></li>
+<li><a href="#smtp-sender-mail-transfer-protocol">SMTP: (Sender Mail Transfer Protocol)</a></li>
+<li><a href="#delete-local-host-running-backend-using-netstat">Delete local host running backend using netstat</a></li>
+</ul>
+<h2 id="protocol">Protocol:</h2>
+<p>Protocol refers to a set of rules and conventions that define how data is transmitted, received, and processed between devices and systems connected to the network. These rules ensure that devices can understand and communicate with each other effectively, enabling the seamless exchange of information across the internet.</p>
+<h3 id="tcp-transmission-control-protocol">TCP (Transmission Control Protocol):</h3>
+<p>Imagine sending a letter through the postal service. TCP is like a reliable, organized courier service that guarantees the letter's delivery.
+TCP ensures that data is transmitted in a precise, ordered manner, and it makes sure that the data arrives without errors. If a packet of data is lost or damaged during transmission, TCP requests the missing data to be sent again until everything is received correctly.
+It is commonly used for applications that require accurate data delivery, like web pages, emails, and file downloads.</p>
+<h3 id="http-hypertext-transfer-protocol">HTTP (Hypertext Transfer Protocol):</h3>
+<p>HTTP is like a set of rules that web browsers and web servers follow to communicate with each other. It's the language they use to exchange web pages and other resources.
+When you type a website address (URL) into your browser and hit Enter, your browser sends an HTTP request to the web server asking for the webpage. The server responds with the requested webpage, and your browser displays it for you to see.
+HTTP is the foundation of the World Wide Web, allowing us to access websites and navigate the internet.</p>
+<h3 id="udp-user-datagram-protocol">UDP (User Datagram Protocol):</h3>
+<p>UDP is like a fast, simple, but less reliable delivery service. It's useful for scenarios where speed is more important than guaranteed delivery.
+Unlike TCP, UDP doesn't ensure that data arrives in order or without errors. It just sends the data as quickly as possible. If some data packets are lost during transmission, UDP does not request retransmission.
+It is commonly used for real-time applications like video streaming, online gaming, and VoIP (Voice over Internet Protocol), where slight delays are acceptable and retransmission might cause more issues than it solves.</p>
+<h2 id="router">Router</h2>
+<p><img alt="Router" src="../png/Router.png" /></p>
+<p>Every Router/Modem has Global IP address, this IP address is shared to each device(computer/mobile) that connected to Router/Modem.
+for eg: If you run multiple applications as google, whatsapp and send request to internet, the device configure to send back response to particular Application using Port number.
+In simple IP address is to figureout which device/router you are using and Port number is to find from which Application response need to send.</p>
+<h2 id="port-number">Port Number:</h2>
+<p><img alt="Port Number" src="../png/Portnumber.png" /></p>
+<p>Well-Known Ports (0-1023): Port numbers from 0 to 1023 are reserved for well-known services. Many of these ports are standardized for specific applications and protocols. For example, port 80 is commonly used for HTTP, port 443 for HTTPS, and port 22 for SSH.</p>
+<p>Registered Ports (1024-49151): Port numbers from 1024 to 49151 are assigned to registered services. These ports are used for various applications and services, and some have been officially registered with the Internet Assigned Numbers Authority (IANA).
+for eg: SQL = 1433
+MongoDB = 27017</p>
+<p>Dynamic/Private Ports (49152-65535): Port numbers from 49152 to 65535 are considered dynamic or private ports. They are used for temporary or private purposes, and they are less likely to be officially registered with IANA.</p>
+<h2 id="internet-speed">Internet speed</h2>
+<p><img alt="Port Number" src="../png/Internetspeed.png" /></p>
+<h2 id="osi-model">OSI Model</h2>
+<p><img alt="Port Number" src="../png/OSI_Model_workflow.gif" /></p>
+<p>The OSI (Open Systems Interconnection) model is a conceptual framework that standardizes the functions of a telecommunication or computing system into seven distinct layers. The model was developed by the International Organization for Standardization (ISO) to promote interoperability and facilitate communication between different systems and devices. Each layer in the OSI model represents a specific set of functions and services, and it helps in understanding and troubleshooting network communication.</p>
+<p>The seven layers of the OSI model, from the bottom to the top, are as follows:</p>
+<h3 id="physical-layer-layer-1">Physical Layer (Layer 1):</h3>
+<p>The physical layer is responsible for transmitting raw bits over a physical medium, such as cables or wireless signals.
+It defines the electrical, mechanical, and procedural aspects of data transmission, such as voltage levels, cable types, and physical connectors.</p>
+<h3 id="data-link-layer-layer-2">Data Link Layer (Layer 2):</h3>
+<p>The data link layer is responsible for reliable data transfer between directly connected devices on the same network segment.
+It provides error detection and correction, and it ensures that data frames are transmitted and received correctly.</p>
+<h3 id="network-layer-layer-3">Network Layer (Layer 3):</h3>
+<p>The network layer is responsible for routing data packets between different networks.
+It handles logical addressing, like IP addresses, and determines the best path for data to reach its destination.</p>
+<h3 id="transport-layer-layer-4">Transport Layer (Layer 4):</h3>
+<p>The transport layer provides end-to-end communication between devices on different networks.
+It ensures reliable data delivery, flow control, and error recovery using protocols like TCP (Transmission Control Protocol) and UDP (User Datagram Protocol).</p>
+<h3 id="session-layer-layer-5">Session Layer (Layer 5):</h3>
+<p>The session layer establishes, maintains, and terminates connections (sessions) between applications on different devices.
+It manages dialogues between applications, synchronization, and checkpointing for data exchange.</p>
+<h3 id="presentation-layer-layer-6">Presentation Layer (Layer 6):</h3>
+<p>The presentation layer is responsible for data representation and encryption/decryption if needed.
+It translates data between the application format and the network format, ensuring that both systems can understand each other.</p>
+<h3 id="application-layer-layer-7">Application Layer (Layer 7):</h3>
+<p>The application layer is the topmost layer that directly interacts with user applications and services.
+It provides network services to end-users, such as email, file transfer, web browsing, and other network applications.</p>
+<h2 id="tcpip">TCP/IP</h2>
+<p>The TCP/IP model, also known as the Internet Protocol Suite, is a conceptual framework used to understand and implement network communication in the context of the internet. It was developed by the United States Department of Defense and is the foundation of the modern internet and many other computer networks. The TCP/IP model consists of four layers, each with specific functionalities:</p>
+<h3 id="application-layer">Application Layer:</h3>
+<p>The Application Layer is the topmost layer and directly interacts with user applications and services. It provides network services to end-users and enables applications to communicate with the network.
+Protocols at this layer include HTTP (for web browsing), SMTP (for email), FTP (for file transfer), and DNS (for domain name resolution).</p>
+<h3 id="transport-layer">Transport Layer:</h3>
+<p>The Transport Layer is responsible for end-to-end communication between devices on different networks. It ensures reliable data delivery, flow control, and error recovery.
+Two main protocols at this layer are TCP (Transmission Control Protocol) and UDP (User Datagram Protocol). TCP provides reliable and ordered data delivery, while UDP is used for faster but less reliable data transmission.</p>
+<h3 id="internet-layer">Internet Layer:</h3>
+<p>The Internet Layer is responsible for routing data packets between different networks. It handles logical addressing, such as IP addresses, and determines the best path for data to reach its destination.
+The core protocol at this layer is IP (Internet Protocol), which provides the unique addressing scheme necessary for devices to communicate across the internet.</p>
+<h3 id="link-layer">Link Layer:</h3>
+<p>The Link Layer, also known as the Network Interface Layer or Data Link Layer, is responsible for reliable data transfer between directly connected devices on the same network segment.
+It defines how data frames are transmitted and received over the physical medium, such as Ethernet or Wi-Fi.
+Various technologies and protocols, such as Ethernet, Wi-Fi (IEEE 802.11), and PPP (Point-to-Point Protocol), operate at this layer.</p>
+<h2 id="osi-vs-tcpip">OSI vs TCP/IP</h2>
+<p><img alt="Port Number" src="../png/OSIvsTCP.gif" /></p>
+<h2 id="https-request">HTTPS Request</h2>
+<p><img alt="Https Request" src="../png/https-requests.png" /></p>
+<h2 id="https-status-code">HTTPS Status Code</h2>
+<p><img alt="Status Code" src="../png/https-statuscode.png" /></p>
+<h2 id="smtp-sender-mail-transfer-protocol">SMTP: (Sender Mail Transfer Protocol)</h2>
+<p><img alt="SMTP" src="../png/smtp.png" /></p>
+<h2 id="delete-local-host-running-backend-using-netstat">Delete local host running backend using netstat</h2>
+<pre><code>netstat -ano | findstr 9090
+netstat -a -o | find &quot;9090&quot;
+taskkill /F /PID 12345
+
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../git_cheat_cmd/" class="btn btn-neutral float-left" title="Git cheat"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../linux/" class="btn btn-neutral float-right" title="Linux Cmd">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/botlaram" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../git_cheat_cmd/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../linux/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="botlaram" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Git cheat - UseMe</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Git cheat";
+        var mkdocs_page_input_path = "git_cheat_cmd.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> UseMe
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../usage/">Usage</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../for_eg/">For eg</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../tools/">Tools</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Git cheat</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#git-cheat-sheet">Git Cheat Sheet</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#1-git-configuration">1. Git configuration</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-git-alias">2. Git alias</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3-starting-a-project">3. Starting a project</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4-local-changes">4. Local changes</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#5-track-changes">5. Track changes</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#6git-status">6.Git status</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#7-commit-history">7. Commit History</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#8-ignoring-files">8. Ignoring files</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#9-branching">9. Branching</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#10git-checkout">10.Git checkout</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#11-git-stash">11. Git stash</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#12-git-merge">12. Git merge</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#13git-rebase">13.Git rebase</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#14-git-remote">14. Git remote</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#15-git-origin-master">15. Git origin master</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#16-pushing-updates">16. Pushing Updates</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#17-pulling-updates">17. Pulling updates</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#18-git-fetch">18. Git fetch</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#19-undo-changes-git-revert">19. Undo changes &gt; Git revert</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#20-git-reset">20. Git reset</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../networking/">Computer Networking</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../linux/">Linux Cmd</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../bullets/">Bullets</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../kubernetes/">Kubernetes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../k8-docs/">K8-Docs</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../packer/">Packer</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ansible/">Ansible</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">UseMe</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Git cheat</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/botlaram/edit/master/docs/git_cheat_cmd.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1></h1>
+
+<h1 id="cheat-code-for-tools">Cheat Code For Tools</h1>
+<h2 id="git-cheat-sheet">Git Cheat Sheet</h2>
+<h2 id="1-git-configuration">1. Git configuration</h2>
+<p>Get and set configuration variables that control all facets of how Git looks
+and operates.</p>
+<p>Set the name:</p>
+<pre><code>$ git config--global user.name "&lt;User name&gt;"
+</code></pre>
+<p>Set the email:</p>
+<pre><code>$ git config --global user.email "xyz123@gmail.com"
+</code></pre>
+<p>Set the default editor:</p>
+<pre><code>$ git config--global core.editor Vim
+</code></pre>
+<p>Check the setting:</p>
+<pre><code>$ git config-list
+</code></pre>
+<h2 id="2-git-alias">2. Git alias</h2>
+<p>Set up an alias for each command:</p>
+<pre><code>$ git config --global alias.co checkout
+
+$ git config --global alias.br branch
+
+$ git config --global alias.ci commit
+
+$ git config --global alias.st status
+</code></pre>
+<h2 id="3-starting-a-project">3. Starting a project</h2>
+<p>Git init</p>
+<p>Create a local repository</p>
+<pre><code>$ git init &lt;Repo Name&gt;
+</code></pre>
+<p>Git clone</p>
+<p>Make a local copy of the server repository.</p>
+<pre><code>$ git clone &lt;remote Url&gt;
+</code></pre>
+<h2 id="4-local-changes">4. Local changes</h2>
+<p>Git add</p>
+<p>Add a file to staging (Index) area</p>
+<pre><code>$ git add &lt;Filename&gt; &lt;Filename&gt;
+</code></pre>
+<p>Add all files of a repo to staging (Index) area</p>
+<pre><code>$ git add .
+</code></pre>
+<p>Git commit</p>
+<p>Record or snapshots the file permanently in the version history with a message</p>
+<pre><code>$ git commit -m " Commit Message"
+</code></pre>
+<h2 id="5-track-changes">5. Track changes</h2>
+<p>Track the changes that have not been staged:</p>
+<pre><code>$ git diff
+</code></pre>
+<p>Track the changes that have staged but not committed:</p>
+<pre><code>$ git diff --staged
+</code></pre>
+<p>Track the changes after committing a file:</p>
+<pre><code>$ git diff HEAD
+</code></pre>
+<p>Track the changes between two commits:</p>
+<pre><code>$ git diff &lt;commit1-sha&gt; &lt;commit2-sha&gt;
+</code></pre>
+<p>Git Diff Branches:</p>
+<pre><code>$ git diff &lt;branch 1&gt; &lt; branch 2&gt;
+</code></pre>
+<h2 id="6git-status">6.Git status</h2>
+<p>Display the state of the working directory and the staging area.</p>
+<pre><code>$ git status
+</code></pre>
+<p>Shows objects:</p>
+<pre><code>$ git show &lt;options&gt; &lt;objects&gt;
+</code></pre>
+<h2 id="7-commit-history">7. Commit History</h2>
+<p>Git log</p>
+<p>Display the most recent commits and the status of the head:</p>
+<pre><code>$ git log
+</code></pre>
+<p>Display the output as one commit per line:</p>
+<pre><code>$ git log -oneline
+</code></pre>
+<p>Displays the files that have been modified:</p>
+<pre><code>$ git log -stat
+</code></pre>
+<p>Display the modified files with location:</p>
+<pre><code>$ git log -p
+</code></pre>
+<p>Git blame</p>
+<p>Display the modification on each line of a file:</p>
+<pre><code>$ git blame &lt;file name&gt;
+</code></pre>
+<h2 id="8-ignoring-files">8. Ignoring files</h2>
+<p>Create.gitignore:</p>
+<pre><code>$ touch .gitignore
+</code></pre>
+<p>Specify intentionally untracked files that Git should ignore.</p>
+<pre><code>$ git Is-files -i --exclude-standard
+</code></pre>
+<h2 id="9-branching">9. Branching</h2>
+<p>Create branch:</p>
+<pre><code>$ git branch &lt;branch name&gt;
+</code></pre>
+<p>List Branch:</p>
+<pre><code>$ git branch --list
+</code></pre>
+<p>Delete Branch:</p>
+<pre><code>$ git branch -d &lt;branch_name&gt;
+</code></pre>
+<p>Delete a remote Branch:</p>
+<pre><code>$ git push origin-delete &lt;branch name&gt;
+</code></pre>
+<p>Rename Branch:</p>
+<pre><code>$ git branch -m &lt;old branch name&gt; &lt;new branch name&gt;
+</code></pre>
+<h2 id="10git-checkout">10.Git checkout</h2>
+<p>Switch between branches a repository.</p>
+<p>Switch to a particular branch:</p>
+<pre><code>$ git checkout &lt;branch name&gt;
+</code></pre>
+<p>Create a new branch and switch to it:</p>
+<pre><code>$ git checkout -b &lt;branchname&gt;
+</code></pre>
+<p>Checkout a Remote branch:</p>
+<pre><code>$ git checkout &lt;remotebranch&gt;
+</code></pre>
+<h2 id="11-git-stash">11. Git stash</h2>
+<p>Switch branches without committing the current branch.</p>
+<p>Stash current work:</p>
+<pre><code>$ git stash
+</code></pre>
+<p>Saving stashes with a message:</p>
+<pre><code>$ git stash save "&lt;Stashing Message"
+</code></pre>
+<p>Check the stored stashes:</p>
+<pre><code>$ git stash list
+</code></pre>
+<p>Re-apply the changes that you just stashed</p>
+<pre><code>$ git stash apply
+</code></pre>
+<p>Track the stashes and their changes:</p>
+<pre><code>$ git stash show
+</code></pre>
+<p>Re-apply the previous commits:</p>
+<pre><code>$ git stash pop
+</code></pre>
+<p>Delete a most recent stash from the queue:</p>
+<pre><code>$ git stash drop
+</code></pre>
+<p>Delete all the available stashes at once:</p>
+<pre><code>$ git stash clear
+</code></pre>
+<p>Stash work on a separate branch:</p>
+<pre><code>$ git stash branch &lt;branch name&gt;
+</code></pre>
+<p>Git cherry pic</p>
+<p>Apply the changes introduced by some existing commit:</p>
+<pre><code>$ git cherry-pick &lt;commit id&gt;
+</code></pre>
+<h2 id="12-git-merge">12. Git merge</h2>
+<p>Merge the branches:</p>
+<pre><code>$ git merge &lt;branch name&gt;
+</code></pre>
+<p>Merge the specified commit to currently active branch:</p>
+<pre><code>$ git merge &lt;commit&gt;
+</code></pre>
+<ul>
+<li>For instance:</li>
+</ul>
+<pre><code>vscode &gt; 
+git clone url
+git checkout main branch
+git pull
+git checkout feature branch
+git merge main_branch ## if you want to update feature branch with main
+## you will get merge conflicts in vscode
+## resolve merge conflicts
+
+git commit ##check branch name and commit to your feature branch
+git push feature branch
+
+</code></pre>
+<h2 id="13git-rebase">13.Git rebase</h2>
+<p>Apply a sequence of commits from distinct branches into a final commit.</p>
+<pre><code>$ git rebase &lt;branch name&gt;
+</code></pre>
+<p>Continue the rebasing process: $ git rebase-continue</p>
+<p>Abort the rebasing process:</p>
+<pre><code>$ git rebase --skip
+</code></pre>
+<p>Git interactive rebase</p>
+<p>Allow various operations like edit, rewrite, reorder, and more on existing
+    commits.</p>
+<pre><code>$ git rebase -i
+</code></pre>
+<h2 id="14-git-remote">14. Git remote</h2>
+<p>Check the configuration of the remote server:</p>
+<pre><code>$ git remote -v
+</code></pre>
+<p>Add a remote for the repository:</p>
+<pre><code>$ git remote add &lt;short name&gt; &lt;remote URL&gt;
+</code></pre>
+<p>Fetch the data from remote server</p>
+<pre><code>$ git fetch &lt;Remote&gt;
+</code></pre>
+<p>Remove a remote connection from the repository:</p>
+<pre><code>$ git remote rm &lt;destination&gt;
+</code></pre>
+<p>Rename remote server:</p>
+<pre><code>$ git remote rename &lt;old name&gt; &lt;new name&gt;
+</code></pre>
+<p>Show additional information about a particular remote:</p>
+<pre><code>$ git remote show &lt;remote&gt;
+</code></pre>
+<p>Change remote:</p>
+<pre><code>$ git remote set-url &lt;remote name&gt; &lt;newURL&gt;
+</code></pre>
+<h2 id="15-git-origin-master">15. Git origin master</h2>
+<p>Push data to remote server:</p>
+<pre><code>$ git push origin master
+</code></pre>
+<p>Pull data from remote server:</p>
+<pre><code>$ git pull origin master
+</code></pre>
+<h2 id="16-pushing-updates">16. Pushing Updates</h2>
+<p>Transfer the commits from your local</p>
+<p>Push data to remote server:</p>
+<pre><code>$ git push origin master
+</code></pre>
+<p>Force push data:</p>
+<pre><code>$ git push &lt;remote&gt; &lt;branch&gt; -f
+</code></pre>
+<p>pository to a remote server.</p>
+<p>Delete a remote branch by push command:</p>
+<pre><code>$ git push origin -delete edited
+</code></pre>
+<h2 id="17-pulling-updates">17. Pulling updates</h2>
+<p>Pull the data from the server:</p>
+<pre><code>$ git pull origin master
+</code></pre>
+<p>Pull a remote branch:</p>
+<pre><code>$ git pull &lt;remote branch URL&gt;
+</code></pre>
+<h2 id="18-git-fetch">18. Git fetch</h2>
+<p>Downloads branches and tags from one or more repositories.</p>
+<p>Fetch the remote repository:</p>
+<pre><code>$ git fetch&lt; repository Url&gt;
+</code></pre>
+<p>Fetch a specific branch:</p>
+<pre><code>$ git fetch &lt;branch URL&gt;&lt;branch name&gt;
+</code></pre>
+<p>Fetch all the branches simultaneously: $ git fetch-all</p>
+<p>Synchronize the local repository:</p>
+<pre><code>$ git fetch origin
+</code></pre>
+<h2 id="19-undo-changes-git-revert">19. Undo changes &gt; Git revert</h2>
+<p>Undo the changes</p>
+<pre><code>$ git revert
+</code></pre>
+<p>Revert a particular commit: </p>
+<pre><code>$ git revert &lt;commit-ish&gt;
+</code></pre>
+<h2 id="20-git-reset">20. Git reset</h2>
+<p>Reset the changes:</p>
+<pre><code>$ git reset -hard
+
+$ git reset -soft
+
+$ git reset --mixed
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../tools/" class="btn btn-neutral float-left" title="Tools"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../networking/" class="btn btn-neutral float-right" title="Computer Networking">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/botlaram" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../tools/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../networking/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

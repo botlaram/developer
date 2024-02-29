@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="botlaram" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>For eg - UseMe</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "For eg";
+        var mkdocs_page_input_path = "for_eg.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> UseMe
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../usage/">Usage</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">For eg</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#args-and-kwargs">Args and Kwargs</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#lambda">Lambda</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#filter">Filter</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#mapping">Mapping</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#list-comprehension">List Comprehension</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#decorator">Decorator</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#read-write-file">Read Write File</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#logging">Logging</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#class">Class</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#isinstance">Isinstance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#dataclass">Dataclass</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#method-static">Method-Static</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#inheritance">Inheritance</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../tools/">Tools</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../git_cheat_cmd/">Git cheat</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../networking/">Computer Networking</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../linux/">Linux Cmd</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../bullets/">Bullets</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../kubernetes/">Kubernetes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../k8-docs/">K8-Docs</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../packer/">Packer</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ansible/">Ansible</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">UseMe</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">For eg</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/botlaram/edit/master/docs/for_eg.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <p>- <a href="#args-and-kwargs">Args and Kwargs</a>
+- <a href="#lambda">Lambda</a>
+- <a href="#filter">Filter</a>
+- <a href="#mapping">Mapping</a>
+- <a href="#list-comprehension">List Comprehension</a>
+- <a href="#decorator">Decorator</a>
+- <a href="#read-write-file">Read Write File</a>
+- <a href="#logging">Logging</a>
+- <a href="#class">Class</a>
+  - <a href="#isinstance">Isinstance</a>
+  - <a href="#dataclass">Dataclass</a>
+  - <a href="#method-static">Method-Static</a>
+  - <a href="#inheritance">Inheritance</a></p>
+<h2 id="builtin">Builtin</h2>
+<h3 id="args-and-kwargs">Args and Kwargs</h3>
+<pre><code>##args
+
+def sum(*args):
+    total = 0
+    for i in args:
+        total = total+i
+    print(total)
+
+sum(5,6,7,8,9)  ##we can pass n number of arguments
+
+###for key word arguments
+
+def student(**data):
+    for key,value in data.items():
+        print(f&quot;{key} {value}&quot;)
+
+##callable = student(key=value,key=value)
+
+student(name=&quot;John&quot;,age=30)
+student(name=&quot;Ram&quot;,age=26)
+
+</code></pre>
+<h3 id="lambda">Lambda</h3>
+<pre><code>##passing argument in lambda
+
+nums=[2,4,6,8,10]
+
+def mul(x):
+
+    for i in x:
+        i=i*2
+        print(i,end=&quot; &quot;)
+
+mul(nums)
+
+
+
+##passing argument in lambda using map
+
+doubled_map = list(map(lambda x: x*2,nums))
+print(doubled_map)
+</code></pre>
+<h3 id="filter">Filter</h3>
+<pre><code>
+##filter is similar to mapping
+
+nums_list = [1,2,3,4,5,6,7,8,9]
+even=[]
+for x in nums_list:
+    if x % 2 == 0:
+        even.append(x)
+
+print(even)
+
+#with filter
+
+def even(x):
+    return x%2==0
+
+even_list= list(filter(even,nums_list))
+print(even_list)
+</code></pre>
+<h3 id="mapping">Mapping</h3>
+<pre><code>double_num = []
+numbers = (5,6,7,8,9)
+
+for num in  numbers:
+    double_num.append(num * 2)
+
+print(double_num)
+
+##using map
+
+def double(num):
+    return num*2
+
+double_List = list(map(double,numbers))
+print(double_List)
+</code></pre>
+<h3 id="list-comprehension">List Comprehension</h3>
+<pre><code>syntax &gt; [return-value for-loop if-condition]
+
+</code></pre>
+<pre><code>nums_List=[5,6,7,8]
+
+##listcomprehension for maping
+
+mapping = list(x*2 for x in nums_List)
+print(mapping)
+
+##listcomprehension for filtering
+
+filtering = list(x for x in nums_List if x%2==0)
+print(filtering)
+</code></pre>
+<h3 id="decorator">Decorator</h3>
+<pre><code>def first(func):    ##passing the func as an argument
+    def second():
+        print(&quot;execute the first line&quot;)
+        func() ##call the funct
+        print(&quot;execute the second line&quot;)
+    return second()
+
+@first   ###decorate
+def middle():
+    print(&quot;execute the middle line&quot;)
+
+# mid = first(middle)  ##another way to call decorate
+middle
+</code></pre>
+<h3 id="read-write-file">Read Write File</h3>
+<pre><code>f = open(&quot;./read_write_demo.txt&quot;,&quot;r&quot;)  ##r=read
+print(f.read())   ##read() to print the txt 
+f.close() ##close
+</code></pre>
+<h3 id="logging">Logging</h3>
+<ul>
+<li>for creating a log file for each different py file for those whose function are imported
+from different py file</li>
+</ul>
+<pre><code>import logging
+
+##using getlogger to create seperate log files
+logger=logging.getLogger(__name__)
+logger.setLevel(logging.INFO) ##set logging level
+
+## formatter is to set logs format
+log_format=logging.Formatter(&quot;%(asctime)s - %(levelname)s - %(message)s&quot;)
+
+## fileHandler is user to create a file
+log_file=logging.FileHandler(&quot;example.log&quot;)
+
+log_file.setFormatter(log_format)
+logger.addHandler(log_file)
+
+## further code
+def something():
+    logger.info(&quot;this is a something function&quot;)
+</code></pre>
+<h3 id="class">Class</h3>
+<pre><code>
+#basic class structure
+
+class Student:
+    ##self hold the value of instant obj
+
+    def __init__(self,name,age) -&gt; None:   ##here self represent to b1
+        self.name = name
+        self.age = age
+
+    def __str__(self) -&gt; str:   ##__str__() function controls what should be returned when the class object is representd as string.
+        return f&quot;{self.name}&quot;
+
+    def hello(self):  ## funct is called methods in class
+        print(&quot;heellooo&quot;)
+
+    def get_name(self):
+        return self.name
+
+    def get_details(self):
+        print(&quot;name&quot;,self.name)
+        print(&quot;age&quot;,self.age)
+
+
+
+##for every class we need to define obj
+
+##here b1 var is obj for class Book
+
+b1 = Student(&quot;RAM&quot;,26)  ##b1 here is obj
+
+b1.hello()   ##obj.method
+
+print(b1.get_name())    ##obj.method
+
+b1.get_details()
+
+
+
+b2=Student(&quot;Krishna&quot;,11)   ##use the same class by creating another obj
+b2.get_details()
+
+</code></pre>
+<h4 id="isinstance">Isinstance</h4>
+<pre><code>
+x = isinstance(&quot;Hello&quot;, (float, int, str, list, dict, tuple))
+print(x)
+
+</code></pre>
+<pre><code>class Myclass:
+    name = &quot;John&quot;
+
+obj = Myclass()
+x = isinstance(obj, Myclass)
+</code></pre>
+<h4 id="dataclass">Dataclass</h4>
+<pre><code>#without dataclass
+
+class Person():
+
+    def __init__(self, first_name, last_name, age):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.age = age
+
+person=Person(&quot;Ram&quot;,&quot;krishna&quot;,26)
+print(person.first_name)
+
+##with dataclass
+
+from dataclasses import dataclass   ##import dataclass
+
+@dataclass
+class Book:
+
+    title : str    ###variables are define without using __init__ instance
+    author : str
+    price : float
+
+book=Book(&quot;Peaceofmind&quot;,&quot;Unknown&quot;,50.50)
+print(book.price)
+</code></pre>
+<h4 id="method-static">Method-Static</h4>
+<pre><code>##class method :A class method is a method which is bound to the class and not the object of the class.
+##static method : A static method is used when we want to create a function without using self as instance-(just to create a independent fucntin)
+
+from datetime import date
+
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    # a class method to create a
+    # Person object by birth year.
+    @classmethod
+    def fromBirthYear(cls, name, year):
+        return cls(name, date.today().year - year)
+
+    # a static method to check if a
+    # Person is adult or not.
+    @staticmethod
+    def isAdult(age):
+        return age &gt; 18
+
+    ##static method eg 2
+    ##this function is independent of the class ,created without using self as instance
+    @staticmethod
+    def thankyou(msg):
+        return msg
+
+person1 = Person('ram', 21)
+person2 = Person.fromBirthYear('ram', 1997)
+
+print(person1.age)
+print(person2.age)
+
+# print the result
+print(Person.isAdult(22))
+
+# print thankyuu msg
+print(Person.thankyou(&quot;thanks for looking up this file&quot;))
+
+</code></pre>
+<h4 id="inheritance">Inheritance</h4>
+<pre><code>class Publisher:
+
+    def __init__(self,title,price) -&gt; None:
+        self.title=title
+        self.price=price
+
+class Author(Publisher):   ##add class name to inherit
+
+    def __init__(self,title,price,pages,period) -&gt; None:
+        super().__init__(title,price)   ###add module super()to fetch the var for Publisher class
+        self.period=period
+        self.pages=pages
+
+class Book1(Publisher):    ##add class name to inherit
+
+    def __init__(self,title,price,author) -&gt; None:
+        super().__init__(title,price)
+        self.author=author    ##adding variable rather then class
+
+class Magazine1(Author):
+
+    def __init__(self,title,author,pages,period) -&gt; None:   ##using Author class to fetch the values
+        super().__init__(title,author,pages,period)
+
+class Newspaper1(Author):
+
+    def __init__(self,title,price,pages,period) -&gt; None:
+        super().__init__(title,price,pages,period)
+
+
+b1=Book1(&quot;PeaceofMind&quot;,&quot;Unknown&quot;,100)
+
+m1=Magazine1(&quot;Vogue&quot;,&quot;Kiran&quot;,20,15)
+
+n1=Newspaper1(&quot;TOI&quot;,&quot;toi&quot;,5,10)
+
+print(b1.author)
+
+print(m1.period)
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../usage/" class="btn btn-neutral float-left" title="Usage"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../tools/" class="btn btn-neutral float-right" title="Tools">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/botlaram" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../usage/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../tools/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

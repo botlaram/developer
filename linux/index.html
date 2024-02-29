@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="botlaram" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Linux Cmd - UseMe</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Linux Cmd";
+        var mkdocs_page_input_path = "linux.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> UseMe
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../usage/">Usage</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../for_eg/">For eg</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../tools/">Tools</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../git_cheat_cmd/">Git cheat</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../networking/">Computer Networking</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Linux Cmd</a>
+    <ul class="current">
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../bullets/">Bullets</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../kubernetes/">Kubernetes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../k8-docs/">K8-Docs</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../packer/">Packer</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ansible/">Ansible</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">UseMe</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Linux Cmd</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/botlaram/edit/master/docs/linux.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h3 id="document-for-linux-directory-usage">Document for Linux Directory usage:</h3>
+<p><a href="https://www.debian.org/releases/buster/amd64/apcs02.en.html">Linux folder usage</a></p>
+<h3 id="chmod">Chmod</h3>
+<p><code>drwxrwxrwx &gt; rwx abbrevates as Read, Write , Delete/Execute</code></p>
+<ul>
+<li>Chmod is use for Modify permission of file/directory. </li>
+<li>
+<p>syntax <code>chmod 777 "file-name/folder-name"</code></p>
+</li>
+<li>
+<p>Chown is use for providing permissions or changing the ownership to other User</p>
+</li>
+<li>syntax to change Owner/User <code>chown "user-name" "file/folder-name"</code></li>
+<li>to change Owner and Group <code>chown "user-name":"group-name" "file/folder-name"</code></li>
+</ul>
+<h3 id="add-user">Add User</h3>
+<ul>
+<li>to add user in linux</li>
+<li>
+<p>syntax <code>sudo adduser &lt;user-name&gt;</code>  #it will ask for password enter new password</p>
+</li>
+<li>
+<p>switch to new user</p>
+</li>
+<li>
+<p>syntax <code>su - &lt;user-name&gt;</code>  </p>
+</li>
+<li>
+<p>after login with new user</p>
+</li>
+<li>
+<p>try to execute <code>apt-get update</code> #you may be get error as incident will be reported.</p>
+</li>
+<li>
+<p>update the permissions for new user</p>
+</li>
+<li>
+<p><code>exit</code>  #logout from the new user</p>
+</li>
+<li>
+<p>for the root user</p>
+</li>
+<li><code>sudo visudo</code></li>
+<li>update members of the admin group<ul>
+<li><code>%&lt;username&gt; ALL=(ALL) NOPASSWD:ALL</code>     #add this line</li>
+</ul>
+</li>
+</ul>
+<p>It contains Owner, Group, Public</p>
+<h4 id="chmod-calculator">chmod <a href="https://chmod-calculator.com/">calculator</a></h4>
+<h3 id="linux-commands">Linux commands</h3>
+<table>
+<thead>
+<tr>
+<th>Execute</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>for Help command</td>
+<td>man "ls", man "mkdir"</td>
+</tr>
+<tr>
+<td>Change directory</td>
+<td>cd</td>
+</tr>
+<tr>
+<td>List directory contents</td>
+<td>ls</td>
+</tr>
+<tr>
+<td>Print working directory</td>
+<td>pwd</td>
+</tr>
+<tr>
+<td>Create a new directory</td>
+<td>mkdir "dir-name"</td>
+</tr>
+<tr>
+<td>Remove an empty directory</td>
+<td>rmdir "dir-name"</td>
+</tr>
+<tr>
+<td>Delete directory</td>
+<td>rm -r "dir-name"</td>
+</tr>
+<tr>
+<td>Remove files</td>
+<td>rm "file-name"</td>
+</tr>
+<tr>
+<td>Concatenate and display files</td>
+<td>cat "file-name"</td>
+</tr>
+<tr>
+<td>Create an empty file</td>
+<td>touch "file-name"</td>
+</tr>
+<tr>
+<td>create file with adding content</td>
+<td>vim "file-name"</td>
+</tr>
+<tr>
+<td>Vim command</td>
+<td>to write use <code>i</code> as insert, to save <code>ESC : wq</code>, to save without editing <code>ESC : q!</code></td>
+</tr>
+<tr>
+<td>Move or rename files and directories</td>
+<td>mv "file-name" "dir-name"/"file-name"</td>
+</tr>
+<tr>
+<td>Copy file to new file</td>
+<td>cp "file-name1" "file-name2"</td>
+</tr>
+<tr>
+<td>Copy file to other folder</td>
+<td>cp "file-name1" "dir-name"/"file-name1"</td>
+</tr>
+<tr>
+<td>Modify Permission of file/dir</td>
+<td>chmod "777" "file/dir-name"</td>
+</tr>
+<tr>
+<td>Change ownership of file/dir</td>
+<td>chown "user-name" "file/dir-name"</td>
+</tr>
+<tr>
+<td>Change ownership &amp; group for file/dir</td>
+<td>chown "user-name":"grp-name" "file/dir-name"</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tar-commands">Tar Commands</h3>
+<table>
+<thead>
+<tr>
+<th>Execute</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>for Help command</td>
+<td>man "tar"</td>
+</tr>
+<tr>
+<td>extract files</td>
+<td>x</td>
+</tr>
+<tr>
+<td>list the contents of archive</td>
+<td>t</td>
+</tr>
+<tr>
+<td>append files to existing archive</td>
+<td>r</td>
+</tr>
+<tr>
+<td>use gzip compression</td>
+<td>z</td>
+</tr>
+<tr>
+<td>use bzip2 compression</td>
+<td>j</td>
+</tr>
+<tr>
+<td>create tar file</td>
+<td>tar cf "file-name.tar" "file/directory-name"</td>
+</tr>
+<tr>
+<td>extract tar file</td>
+<td>tar -xvf "file-name.tar"  -v: contents of tar, -f: tar filename</td>
+</tr>
+<tr>
+<td>compress files</td>
+<td>gzip  "fil-ename"</td>
+</tr>
+<tr>
+<td>decompress files</td>
+<td>gunzip "file-name"</td>
+</tr>
+<tr>
+<td>to update system</td>
+<td>sudo apt update</td>
+</tr>
+</tbody>
+</table>
+<h3 id="advance-commands">Advance Commands</h3>
+<table>
+<thead>
+<tr>
+<th>Execute</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>send file to other system using IP add.</td>
+<td>scp "file-path" root@IPofothersystem:/path</td>
+</tr>
+<tr>
+<td>check network connectivity</td>
+<td>ping google.com</td>
+</tr>
+<tr>
+<td>display network configure</td>
+<td>ifconfig</td>
+</tr>
+<tr>
+<td>display network connection</td>
+<td>netstat</td>
+</tr>
+<tr>
+<td>control system service &amp; settings</td>
+<td><code>systemctl</code></td>
+</tr>
+<tr>
+<td>to start nginx</td>
+<td><code>systemctl start nginx</code> <code>systemctl status nginx</code> <code>systemctl stop nginx</code></td>
+</tr>
+<tr>
+<td>add new user</td>
+<td>useradd "user-name"</td>
+</tr>
+<tr>
+<td>change password for user</td>
+<td>passwd "user-name"</td>
+</tr>
+<tr>
+<td>switch user</td>
+<td>su</td>
+</tr>
+<tr>
+<td>check current user</td>
+<td>whoami</td>
+</tr>
+<tr>
+<td>system Disk usage</td>
+<td>df</td>
+</tr>
+<tr>
+<td>mount file system</td>
+<td>sudo mount /dev/folder /mnt/folder</td>
+</tr>
+<tr>
+<td>check packages or app install path</td>
+<td>which cmake</td>
+</tr>
+<tr>
+<td>save terminal output to txt file</td>
+<td><code>touch file.txt</code> <code>ls | tee file.txt</code></td>
+</tr>
+<tr>
+<td>Check cPU, RAM usage</td>
+<td>htop</td>
+</tr>
+</tbody>
+</table>
+<p>|cut                                             | Cut out sections of a file
+|gzip                                            | Compress or decompress files using gzip
+|gunzip                                          | Decompress files compressed with gzip
+|find                                            | Find files and directories matching a pattern
+|grep                                            | Search for a pattern in a file
+|awk                                             | Pattern scanning and processing language
+|sed                                             | Stream editor for filtering and transforming text
+|head                                            | Display the first few lines of a file
+|tail                                            | Display the last few lines of a file
+|sort                                            | Sort lines of a file
+|uniq                                            | Remove duplicate lines from a file
+|wc                                              | Count lines, words, and characters in a file
+|diff                                            | Compare two files line by line
+|patch                                           | Apply a patch to a file
+|chmod                                           | Change permissions of files and directories
+|chown                                           | Change the owner of a file or directory
+|chgrp                                           | Change the group ownership of a file or directory
+|ps                                              | List running processes
+|top                                             | Display system resource usage and process information
+|kill                                            | Send a signal to a process to terminate it
+|du                                              | Display disk usage of files and directories
+|df                                              | Display free disk space on the file system
+|mount                                           | Mount a file system
+|umount                                          | Unmount a file system
+|ping                                            | Test connectivity to a network host
+|ssh                                             | Secure shell remote login and command execution
+|scp                                             | Secure copy files between hosts
+|rsync                                           | Remote file and directory synchronization
+|curl                                       | Transfer data from or to a server using various protocols
+|wget                                       | Retrieve files from the web using various protocols
+|ftp                                             | File Transfer Protocol client
+|sftp                                            | Secure File Transfer Protocol client
+|telnet                                          | Telnet client
+|nslookup                                        | DNS lookup utility
+|dig                                             | DNS lookup utility
+|netstat                                         | Display network connections and statistics
+|ifconfig                                        | Configure network interfaces
+|route                                           | Display or modify the routing table
+|iptables                                        | Firewall and packet filtering utility
+|hostname                                        | Display or set the hostname of the system
+|date                                            | Display or set the system date and time
+|timedatectl                                     | Control the system date and time
+|uname                                           | Display system information
+|whoami                                          | Display the current user ID
+|id                                              | Display user and group information
+|su                                              | Switch user to become another user
+|sudo                                            | Execute a command with superuser privileges
+|passwd                                          | Change the password of a user account
+|useradd                                         | Create a new user account
+|userdel                                         | Delete a user account
+|usermod                                         | Modify a user account
+|groupadd                                        | Create a new group
+|groupdel                                        | Delete a group
+|groupmod                                        | Modify a group
+|finger                                          | Display information about users on the system
+|last                                            | Display information about recent logins</p>
+<p>history — Display command history
+echo — Print a message to the terminal
+printf — Format and print data
+lshw — Displays hardware information
+lspci — Displays information about PCI buses and devices.
+lsusb — Displays information about USB buses and devices.
+hwinfo — Displays detailed hardware information.
+free — Displays memory usage.
+vmstat — Displays system memory, processor, and I/O statistics.
+iostat — Displays CPU and disk I/O statistics.
+uptime — Displays system uptime and load averages.
+journalctl — Displays the system journal.
+dmesg — Displays the kernel ring buffer.
+crontab — Schedules recurring tasks.
+at — Schedules a one-time task.
+service — Manages system services.
+systemctl — Controls system services in systemd-based distributions.
+traceroute — Traces the network path to a remote host.
+bzip2 — Compresses files using the bzip2 algorithm.
+unzip — Extracts files from a ZIP archive.
+tee — Redirect output to multiple files
+chroot — Change the root directory for a process
+ps aux — Display information about all running processes
+less — Display file contents in a paginated format
+more — Display file contents one page at a time
+ln — Create links between files
+realpath — Print the resolved absolute path of a file
+watch — Execute a command periodically and display the output
+cal — Display a calendar
+tar -xzvf — Extract files from a compressed archive
+tar -czvf — Create a compressed archive
+whereis — Locate the binary, source, and manual page files for a command
+locate — Find files by name
+which — Display the full path to an executable</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../networking/" class="btn btn-neutral float-left" title="Computer Networking"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../bullets/" class="btn btn-neutral float-right" title="Bullets">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/botlaram" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../networking/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../bullets/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

@@ -15,7 +15,7 @@ node4=Node(40)
 ## assign next address to nodes, connecting nodes to form a linked list
 node1.next=node2
 node2.next=node4
-node3.next=node4
+node4.next=node3
 
 ##print
 initial=node1

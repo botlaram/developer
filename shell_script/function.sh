@@ -26,6 +26,7 @@ user_input $1 #to make use of arguments in fucntion, we need to pass argument wh
 
 verify_user() {
     if [ $(id -u) -eq 0 ]; then
+        echo "updating apt-get"
         apt-get update
     else
         exit 1   #exit script if not root user

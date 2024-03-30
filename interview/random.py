@@ -37,3 +37,15 @@ import re
 match=re.search(r'krishna',"myself rama krishna")
 print(match)
 print(match.group())
+
+
+
+def gen():
+    for i in range(10):
+        yield i
+        
+call_obj=gen()
+print(call_obj.__next__())
+print(next(call_obj))
+print(call_obj.__next__())
+print(next(call_obj))

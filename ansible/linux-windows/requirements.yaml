@@ -1,0 +1,3 @@
+# install ansible roles from git
+- name: ansible-role-name
+  src: git+https://github.com/role-url/ansible-role-name.git

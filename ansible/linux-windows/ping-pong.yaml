@@ -1,0 +1,12 @@
+- name: Execute command on Windows host
+  hosts: win # Specify the group or hostname of the Windows host
+  gather_facts: yes # Disable gathering facts for faster execution
+
+  tasks:
+  - name: Run command on Windows
+    win_command: whoami # Specify the command you want to run
+    register: command_output # Register the output of the command
+
+  - name: Display command output
+    debug:
+      var: command_output.stdout # Display the standard output of the command

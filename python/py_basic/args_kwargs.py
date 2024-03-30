@@ -21,7 +21,7 @@ def add_list(*args):
         list.append(name)
         print(list,"\n")
     
-add_list("ram","krishna","botla")
+add_list("rama","krishna","botla")
 
 ##for key words arguments 
 
@@ -32,3 +32,5 @@ def student(**data):
 ##callable=student(key=value)
 student(name="ram",id=5502209)
 student(name="hari",id=5509902)
+
+

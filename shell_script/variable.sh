@@ -8,7 +8,7 @@ PERSON3=$1                #assign runtime variable
 PERSON4=$(echo "Alien")   #assgin command to var
 DATE=$(date)              #display date
 
-echo "hello I'm person1 :  ${PERSON1}"
+echo "hello I'm person1 :  $PERSON1"
 
 echo "good morning from person2 : ${PERSON2}"
 

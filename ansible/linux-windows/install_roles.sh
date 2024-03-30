@@ -1,0 +1,1 @@
+ansible-galaxy install --force git+https://github.com/ansible-rolename/community.git

@@ -14,12 +14,12 @@ while i <= withdrawal:
         break
     print(f"{i} : withdrawal")
     i+=1
-    
+
 # create list by taking input from user
 
 list=[]
 enter_range=int(input("enter the range"))
 for i in range(enter_range):
-    enter_num=input(f"enter element {i+1} :")
+    enter_num=input(f"enter element {i} :")
     list.append(enter_num)
 print(list)

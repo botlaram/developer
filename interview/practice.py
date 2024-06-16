@@ -11,6 +11,7 @@ dict={"ram":25,"hari":20}
 
 print(dict.get("ram"))
 print(dict["ram"])
+
 dict.update([{"new",30},{"new1",40}])
 print(dict, "using update")
 

@@ -29,6 +29,10 @@ class Employee:
         self._name=Employee.__org  #assign private key
         self._id=id  # protected instance attribute
         
+    def accesswithinclass(self):
+        print(Employee.__org)
+        
 emp=Employee("RAMA",5502209)
+emp.accesswithinclass()
 print(emp._name)
 print(emp.__org)   #cannot access here private key

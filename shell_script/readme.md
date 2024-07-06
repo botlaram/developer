@@ -1,17 +1,15 @@
-# shell script
+# shell script grep and sed commands
 
 host .devcontainer for practice/executing shell script
 
 ## sed
 1. replace string in .txt
-
 ```shell
 sed s'/Rama/Hari/' text.txt   #replace string and display output in terminal
 sed -i s'/Rama/Hari/' text.txt #s:string, -i will override string in .txt file
 ``` 
 
 2. delete line in .txt
-
 ```shell
 sed -i '/this line is will get deleted using sed/d' text.txt
 ```  
@@ -26,4 +24,35 @@ sed '/Rama/a Hari' text.txt  #a: append (append after string
 4. display specific line from file
 ```shell
 sed -n '/Rama/p' text.txt   #p:print the line where Rama is mentioned
+```
+
+5. search word from file (-i used for ignore-case sensitive, n=line number)
+```shell
+## syntax
+grep -in term /path/to/file
+grep -rin term /path/to/folder
+
+#example
+grep -in "search-word" filename.txt filename2.txt
+```
+
+6. search filename using grep
+```shell
+ls | grep -in "filename" or ls | grep -in ".txt"
+```
+
+7. Search word Recursively (used for dir and subdir) in Directories:
+r=recursive , i=ignore, n=line number
+```shell
+grep -rin "search-word" /directory-name
+```
+
+8. search for file names recursively in the current directory and its subdirectories using find
+```bash
+find . -type f | grep ".sh"
+```
+
+9. count the number of times word used in file (c used of count)
+```bash
+grep -ic rama text.txt condition.sh
 ```

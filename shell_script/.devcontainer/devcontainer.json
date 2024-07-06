@@ -9,7 +9,7 @@
     },
 
     // Use 'postCreateCommand' to run commands after the container is created.
-    "postCreateCommand": "echo 'Container was created.'",
+    "postCreateCommand": "echo 'Container is created.'",
 
     // Add the IDs of extensions you want installed when the container is created.
     "extensions": []

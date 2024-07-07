@@ -5,7 +5,7 @@ host .devcontainer for practice/executing shell script
 ## sed
 1. replace string in .txt
 ```shell
-sed s'/Rama/Hari/' text.txt   #replace string and display output in terminal
+sed s'/Rama/Hari/' text.txt   #replace string and display output in terminal (it will not override values in file)
 sed -i s'/Rama/Hari/' text.txt #s:string, -i will override string in .txt file
 ``` 
 
@@ -24,6 +24,21 @@ sed '/Rama/a Hari' text.txt  #a: append (append after string
 4. display specific line from file
 ```shell
 sed -n '/Rama/p' text.txt   #p:print the line where Rama is mentioned
+```
+
+5. display line number of word (n for number, e for expression)
+```shell
+sed -n -e '/word/=' filename
+```
+
+6. display line number along with word (n for number, e for expression)
+```shell
+sed -n -e '/word/=' -e /'word/p' filename
+```
+
+7. replace words, only from 1st to 5th lines (g for global)   #to override values in file use (-i after sed)
+```bash
+sed '1,5 s/word/replace-word/g' filename
 ```
 
 5. search word from file (-i used for ignore-case sensitive, n=line number)

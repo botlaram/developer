@@ -23,3 +23,9 @@
 > kubectl port-forward svc/argocd-server -n argocd 9090:443
 
 > kubectl get secret argocd-initial-admin-secret -n argocd -o yaml
+
+> create project in argocd add repo
+
+> connect repo
+
+> in create application choose helm, it should provide path of argocd

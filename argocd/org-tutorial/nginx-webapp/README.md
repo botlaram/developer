@@ -21,7 +21,7 @@
 > kubectl get svc -A
 
 > kubectl port-forward svc/argocd-server -n argocd 9090:443
->
+
 > kubectl get secret argocd-initial-admin-secret -n argocd -o yaml
 
 > create project in argocd add repo

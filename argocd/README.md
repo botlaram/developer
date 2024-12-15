@@ -17,7 +17,6 @@
 
 ![Architecture](./../docs/png/agrocd-workflow4.PNG)
 
-
 1. deploy ArgoCD in k8 cluster
 2. Configure AgoCD to Track with Git Repo
 
@@ -53,7 +52,7 @@ secret key will be stored in "argocd-initial-admin-secret"
 
 9. decode password
 
-> "password" | base64 --decode      
+> "password" | base64 --decode
 
 Note: in encoding password dont copy %
 

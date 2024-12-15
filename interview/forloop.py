@@ -1,8 +1,8 @@
 # print even
 list=[4,5,25,6,8,8,9,2,2,3,97,52,96,32,84,19]
 for i in list:
-    if i%2 is not 0:
-        print(i)
+    if i%2 == 0:
+        print(i, end="")
         
 # using while loop
 candy=10
@@ -18,8 +18,8 @@ while i <= withdrawal:
 # create list by taking input from user
 
 list=[]
-enter_range=int(input("enter the range"))
+enter_range=int(input("enter the range to create list of elements"))
 for i in range(enter_range):
-    enter_num=input(f"enter element {i} :")
+    enter_num=input(f"enter element {i+1} :")
     list.append(enter_num)
 print(list)

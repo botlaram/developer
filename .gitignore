@@ -3,6 +3,8 @@
 venv/
 .env
 env/
+**/.terraform/
+.terraform.lock.hcl
 
 ##ignore files
 ./py_files/create_male_demo*

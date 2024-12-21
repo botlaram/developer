@@ -5,6 +5,10 @@ venv/
 env/
 **/.terraform/
 .terraform.lock.hcl
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup
+terraform.tfplan
 
 ##ignore files
 ./py_files/create_male_demo*

@@ -66,6 +66,15 @@ The state file contains details about the resources created by Terraform, includ
 
 When you run terraform plan, Terraform compares the desired configuration (defined in your .tf files) with the actual state of the infrastructure (in the state file). Any differences are shown in the plan output
 
+State Management Commands
+
+```bash
+terraform state list: Lists all resources in the state file.
+terraform state show <resource_address>: Displays detailed information about a specific resource.
+terraform state pull: Downloads the remote state file locally.
+terraform state push: Uploads a local state file to the remote backend.
+```
+
 ## **azure cli to get list of secret**
 
 ```bash
@@ -153,3 +162,536 @@ Types of Terraform Modules
   ├── outputs.tf
   └── variables.tf
 ```
+
+## lock terraform state file
+
+Locking the Terraform state file is a mechanism to prevent simultaneous operations (like multiple terraform apply or terraform plan commands) from corrupting the state file. When multiple users or processes try to modify the state file concurrently, there’s a risk of conflicts or overwrites. State file locking ensures that only one process can modify the state file at a time.
+
+How State Locking Works in Terraform
+Terraform uses a locking mechanism provided by the backend where the state file is stored.
+
+1. Acquires a lock before modifying the state file.
+2. Prevents other operations until the lock is released.
+3. Releases the lock after the operation completes.
+
+Locking in Azure Cloud
+
+In Azure, the Azure Blob Storage backend supports state file locking by using Azure Storage blob leases. A lease is a mechanism provided by Azure Blob Storage to ensure exclusive access to a blob for a certain period.
+
+Setting Up Terraform State Locking with Azure Blob Storage
+Prerequisites:
+
+1. An Azure Storage account.
+2. A container in Azure Blob Storage to store the state file.
+3. Configure the Backend: Add the following configuration in your Terraform code to use Azure Blob Storage as the backend:
+
+```hcl
+terraform {
+  backend "azurerm" {
+    resource_group_name  = "myResourceGroup"
+    storage_account_name = "mystorageaccount"
+    container_name       = "terraformstate"
+    key                  = "terraform.tfstate"
+  }
+}
+resource_group_name: The Azure resource group containing the storage account.
+storage_account_name: The name of the storage account.
+container_name: The container name in Blob Storage to store the state file.
+key: The file name for the Terraform state file.
+```
+
+Enable State Locking: By default, when you use Azure Blob Storage as a backend, Terraform automatically uses blob leases to lock the state file during operations. No additional configuration is needed.
+
+Managing Locks: If Terraform detects a lock during an operation, it will:
+
+Wait until the lock is released.
+
+If needed, you can manually break the lock using Azure CLI:
+
+```bash
+az storage blob lease break \
+  --blob-name terraform.tfstate \
+  --container-name terraformstate \
+  --account-name mystorageaccount
+```
+
+## resource drift
+
+Resource drift in Terraform refers to the situation where the actual state of resources in your infrastructure differs from the expected state defined in your Terraform configuration files. Drift can occur when changes are made to infrastructure outside of Terraform's control, such as manual modifications in the cloud provider's console or API.
+
+Causes of Resource Drift
+
+1. Manual Changes: Alterations made directly in the cloud provider's management console or via other tools.
+2. Automated Processes: Updates performed by scripts or other automated workflows outside of Terraform.
+3. External Dependencies: Changes in resources that Terraform depends on but does not manage, such as auto-scaling events or updates in external systems.
+4. Configuration Changes: Updates in Terraform configuration files that do not match the current state of the resources.
+
+If manual changes have been made to your infrastructure and you want to bring those changes into Terraform so that it recognizes them without overwriting them, you can achieve this through a process called Terraform import. Here's how you can do it:
+
+Steps to Add Manual Changes to Terraform
+
+1. Identify the Resources to Import  
+Determine which resources have been manually changed and need to be imported into Terraform.
+Collect the identifiers (e.g., resource ID, ARN, or name) for these resources.
+
+2. Update Your Terraform Configuration  
+Add the resource block to your Terraform configuration for the resource you want to import.
+Ensure that the resource block matches the current state of the resource as closely as possible (e.g., resource type, attributes).  
+Example:
+
+    ```terraform
+    resource "azurerm_virtual_machine" "example" {
+    name                  = "my-vm"
+    resource_group_name   = "myResourceGroup"
+    location              = "East US"
+    vm_size               = "Standard_DS1_v2"
+    network_interface_ids = [azurerm_network_interface.example.id]
+    ...
+    }
+    ```
+
+3. Run the Terraform Import Command
+Use the terraform import command to associate the manually created resource with the resource block in your configuration.  
+Example:  
+Replace placeholders ({subscriptionId}, {resourceGroupName}, {vmName}) with the actual values for your resource.
+
+    ```bash
+    terraform import azurerm_virtual_machine.example /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachines/{vmName}
+    ```
+
+4. Refresh the State
+After importing, run the terraform plan command to verify that the resource's current state matches the Terraform configuration.
+
+    ```bash
+    terraform plan
+    ```
+
+If there are discrepancies, Terraform will show a plan to align the state with the configuration.
+
+## terraform taint
+
+Terraform taint command marks a specific resource in the Terraform state as "tainted," meaning it needs to be destroyed and recreated during the next terraform apply.
+
+Use Case:
+
+A resource is in a bad state (e.g., misconfigured, corrupted, or broken).
+You want to force a resource to be recreated without modifying its configuration.
+
+Workflow:
+
+1. Mark the Resource as Tainted:
+
+    ```bash
+    terraform taint <resource_address>
+
+    #example
+    terraform taint aws_instance.my_instance #<resource_address> refers to the resource's address in the Terraform configuration.
+    ```
+
+2. Apply the Changes: Run terraform apply to destroy the tainted resource and recreate it.
+
+    ```bash
+    terraform apply
+    ```
+
+## terraform apply -replace=<address>
+
+Terraform apply -replace=<address> command is a more modern approach (introduced in Terraform 0.15) to achieve what terraform taint does but in a single step. It directly forces the replacement of a specific resource during the terraform apply operation.
+
+Use Case:
+
+You want to recreate a specific resource immediately without manually tainting it first.  
+You need more granular control during a terraform apply, such as replacing a resource as part of a broader plan.
+
+Workflow:
+
+Run the Apply Command with Replace:
+
+```bash
+terraform apply -replace=<resource_address>
+
+#Example:
+terraform apply -replace=aws_instance.my_instance
+```
+
+## local-exec and remote-exec function
+
+### local-exec Provisioner
+
+Purpose:
+
+The local-exec provisioner runs a command or script on the machine where Terraform is executed (i.e., the local workstation or CI/CD server running Terraform).
+
+Use Cases:
+
+1. Triggering external processes, like CI/CD pipelines or API calls.  
+2. Executing local scripts for configuration, validation, or logging.  
+3. Sending notifications or updates to external systems.  
+
+Configuration file local-exec
+
+```terraform
+resource "aws_instance" "example" {
+# Resource definition
+ami           = "ami-12345678"
+instance_type = "t2.micro"
+
+provisioner "local-exec" {
+    command = "echo 'Instance created!'"
+}
+}
+```
+
+```terraform
+resource "aws_instance" "example" {
+ami           = "ami-12345678"
+instance_type = "t2.micro"
+
+provisioner "local-exec" {
+    command = "aws ec2 describe-instances > instances.json"
+}
+}
+
+# The local-exec provisioner runs an AWS CLI command locally to save instance details to a JSON file.
+```
+
+### remote-exec Provisioner
+
+Purpose:  
+
+The remote-exec provisioner runs commands or scripts on a remote resource (e.g., a VM or instance) after it is created. This requires SSH or WinRM access to the resource.
+
+Use Cases:
+
+1. Installing or configuring software on a server.
+2. Running startup scripts or applying configuration management tools (e.g., Ansible, Puppet).
+3. Performing post-deployment tasks, such as downloading application code.
+
+Configuration file remote-exec
+
+```hcl
+resource "aws_instance" "example" {
+  # Resource definition
+  ami           = "ami-12345678"
+  instance_type = "t2.micro"
+
+  connection {
+    type        = "ssh"
+    host        = self.public_ip
+    user        = "ec2-user"
+    private_key = file("~/.ssh/id_rsa")
+  }
+
+  provisioner "remote-exec" {
+    inline = [
+      "sudo apt-get update -y",
+      "sudo apt-get install nginx -y"
+    ]
+  }
+}
+```
+
+## Output files
+
+Output.tf is a file (or a section in any Terraform configuration file) where you define outputs. Outputs allow you to extract and display information about your infrastructure after Terraform has applied changes. These outputs can also be used as inputs to other modules or external systems.
+
+Integration: Share data between Terraform modules. Pass infrastructure details to external tools, scripts, or CI/CD pipelines.
+
+Basic Syntax:
+
+```hcl
+output "<name>" {
+  value = <expression>
+}
+```
+
+Example: Using output.tf
+
+```hcl
+output "instance_public_ip" {
+  value       = aws_instance.example.public_ip
+  description = "The public IP address of the EC2 instance"
+}
+```
+
+## secure secret available
+
+Terraform often requires sensitive information such as API keys, passwords, and other secrets to provision infrastructure. Properly securing these secrets is crucial to prevent accidental exposure or breaches.
+
+1. Use Environment Variables
+
+Terraform allows you to pass variables as environment variables, keeping them out of your configuration files.
+
+Define the variable in variables.tf:
+
+```hcl
+variable "db_password" {
+  type        = string
+  description = "The database password"
+}
+```
+
+Set the environment variable:
+
+```bash
+export TF_VAR_db_password="your_secret_password"
+Reference the variable in your configuration:
+```
+
+```hcl
+resource "aws_db_instance" "example" {
+  password = var.db_password
+}
+```
+
+2. Use Terraform's Sensitive Attribute
+
+Terraform’s sensitive attribute can be used to mask sensitive data in the Terraform plan and output.
+
+Example:
+
+```hcl
+variable "db_password" {
+  type      = string
+  sensitive = true
+}
+
+output "db_password" {
+  value     = var.db_password
+  sensitive = true
+}
+```
+
+This prevents the sensitive variable from being displayed in the Terraform CLI output.
+
+3. Use .tfvars Files with Care
+
+You can define variables, including secrets, in a .tfvars file.
+
+Example: secrets.tfvars:
+
+```hcl
+db_password = "super_secret_password"
+```
+
+Run Terraform with the .tfvars file:
+
+```bash
+terraform apply -var-file="secrets.tfvars"
+```
+
+## understand the use of collections and structural types
+
+In Terraform, collections and structural types are mechanisms to handle complex and flexible data structures. They are used to represent and manage data such as lists, maps, and objects, which help organize configuration in a scalable and reusable way.
+
+### Collections in Terraform
+
+Collections are data types that group multiple values together. Terraform provides two main types of collections: lists and maps.
+
+1. Lists
+
+Definition: A list is an ordered collection of values, indexed by sequential integers starting at 0.
+
+Example: list(string) (a list of strings)
+
+When to Use: Use lists when order matters, or when iterating through items sequentially.
+
+Example:
+
+```bash
+variable "instance_types" {
+  type    = list(string)
+  default = ["t2.micro", "t2.small", "t2.medium"]
+}
+
+resource "aws_instance" "example" {
+  count         = length(var.instance_types)
+  instance_type = var.instance_types[count.index]
+}
+```
+
+This creates multiple instances using instance types from the list.
+
+2. Maps
+
+Definition: A map is a collection of key-value pairs, where each value is identified by a unique key.
+
+Example: map(string) (a map with string keys and string values)
+
+When to Use:
+
+Use maps when you need to look up values by keys or store key-value pairs for better readability.
+
+```bash
+variable "region_amis" {
+  type = map(string)
+  default = {
+    us-east-1 = "ami-12345678"
+    us-west-2 = "ami-87654321"
+  }
+}
+
+resource "aws_instance" "example" {
+  ami           = var.region_amis[var.region]
+  instance_type = "t2.micro"
+}
+```
+
+This selects the correct AMI based on the region.
+
+Combining Lists and Maps: Terraform supports nested collections, like a list of maps or a map of lists.
+
+```bash
+variable "servers" {
+  type = list(map(string))
+  default = [
+    { name = "web1", type = "t2.micro" },
+    { name = "web2", type = "t2.small" },
+  ]
+}
+
+resource "aws_instance" "example" {
+  count         = length(var.servers)
+  instance_type = var.servers[count.index]["type"]
+  tags = {
+    Name = var.servers[count.index]["name"]
+  }
+}
+```
+
+This creates instances with types and names derived from the list of maps.
+
+### Structural Types in Terraform
+
+Structural types describe complex data structures using objects, tuples, or nested types. They allow for fine-grained control over the shape and constraints of the data.
+
+1. Objects
+
+Definition: Objects are collections of attributes with specified names and types. Each attribute is like a named field in a JSON object.
+
+When to Use:
+
+Use objects for structured data with named fields and predictable types.
+
+```bash
+variable "server_config" {
+  type = object({
+    name         = string
+    instance_type = string
+    tags          = map(string)
+  })
+  default = {
+    name         = "web-server"
+    instance_type = "t2.micro"
+    tags          = { Environment = "production" }
+  }
+}
+
+resource "aws_instance" "example" {
+  ami           = "ami-12345678"
+  instance_type = var.server_config.instance_type
+  tags          = var.server_config.tags
+}
+```
+
+2. Tuples
+
+Definition: Tuples are ordered collections of values with a fixed number of elements, where each element can have a different type.
+
+When to Use:
+
+Use tuples when you have a fixed structure but need to mix data types.
+
+```bash
+variable "database_info" {
+  type = tuple([string, number, bool])
+  default = ["db-primary", 3306, true]
+}
+
+output "database_name" {
+  value = var.database_info[0]
+}
+
+output "database_port" {
+  value = var.database_info[1]
+}
+
+output "is_database_active" {
+  value = var.database_info[2]
+}
+```
+
+Here, the tuple holds a database name (string), port (number), and active status (boolean)
+
+## meta_arguments: create_before_destroy
+
+Meta-arguments in Terraform are special arguments that are used in the resource blocks to control the behavior of Terraform's resource creation and management process. These arguments are not directly related to the specific properties of a resource but instead help manage how Terraform applies changes to infrastructure.
+
+The most commonly used meta-arguments include:
+
+- depends_on: depends_on meta-argument explicitly defines dependencies between resources.
+
+```bash
+resource "aws_instance" "example" {
+  ami           = "ami-12345678"
+  instance_type = "t2.micro"
+}
+
+resource "aws_security_group" "example" {
+  name        = "example-sg"
+  description = "Example security group"
+
+  depends_on = [aws_instance.example]
+}
+```
+
+- count : The count meta-argument allows the creation of multiple instances of a resource.
+
+```bash
+resource "aws_instance" "example" {
+  count         = 3
+  ami           = "ami-12345678"
+  instance_type = "t2.micro"
+}
+```
+
+- for_each : The for_each meta-argument allows iteration over a set of values (like a map or list) to create multiple resources.
+
+```bash
+resource "aws_instance" "example" {
+  for_each      = var.instance_configs
+  ami           = each.value["ami"]
+  instance_type = each.value["instance_type"]
+}
+```
+
+- create_before_destroy: The create_before_destroy argument in the lifecycle block ensures that the new resource is created before the old one is destroyed. This is useful when a resource's replacement might disrupt service or functionality.
+
+```bash
+resource "aws_instance" "example" {
+  ami           = "ami-12345678"
+  instance_type = "t2.micro"
+  
+  lifecycle {
+    create_before_destroy = true
+  }
+}
+```
+
+- prevent_destroy: Prevents the destruction of the resource even if the configuration changes. Useful for protecting critical resources (e.g., databases, production servers).  
+This prevents the resource from being destroyed, even if you run terraform destroy.
+
+```bash
+resource "aws_instance" "example" {
+  ami           = "ami-12345678"
+  instance_type = "t2.micro"
+
+  lifecycle {
+    prevent_destroy = true
+  }
+}
+```
+
+## [built-in functions](https://developer.hashicorp.com/terraform/language/functions)
+
+Terraform provides a variety of built-in functions that you can use to manipulate and operate on data within your configuration files. These functions allow you to work with strings, numbers, collections, dates, and more, enabling more dynamic and flexible Terraform code.
